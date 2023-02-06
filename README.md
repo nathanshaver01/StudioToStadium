@@ -7,3 +7,5 @@ Collaborators: Matthew Ruiz Diaz, Nathan Ovadia, Nathan Shaver, Nicholas Griffin
 Goal: This github repo is dedicated to manage the Collegiate dance team recruitment web platform
 
 Zenhub Board: https://app.zenhub.com/workspaces/studiotostadium-63041f21bbd66f0012dab0ac/board?invite=ESYVaEhNxDRmMVr1GZSAsPjQ
+
+test
