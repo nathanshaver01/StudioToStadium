@@ -29,6 +29,7 @@
 
 
 <style>
+
 body {font-family: Arial, Helvetica, sans-serif;}
 * {box-sizing: border-box;}
 
@@ -76,7 +77,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
 }
 
 /* Add a white background color to the sign up button */
-.form-container .cancel {
+.form-container .signup {
     background-color: white;
     color: black;
 }
@@ -86,16 +87,16 @@ body {font-family: Arial, Helvetica, sans-serif;}
     opacity: 1;
 }
 
-/* Controls the StudioToStadium sign */
+/* Controls the LogIn sign */
 h1{
   font-size: 30px;
   font-family: Arbotek;
-  margin-left: 93px;
+  margin-left: 143px;
   margin-bottom: 30px;
 }
 
 /* Controls the Forgot Password? sign */
-h3 {
+h2 {
   font-size: 12px;
   margin-left:282px;
   margin-top: -15px;
@@ -103,11 +104,25 @@ h3 {
   text-decoration: underline;
 }
 
+/* Controls the Sing up sign */
+h3{
+  font-size: 30px;
+  font-family: Arbotek;
+  margin-left: 133px;
+  margin-bottom: 30px;
+}
+
+hr.rounded {
+  border-top: 3px dashed #bbb;
+  margin-top: -3px;
+  border-radius: 5px;
+}
+
 </style>
 
-<div class="form-popup" id="myForm">
+<div class="form-popup" id="myLogInForm">
   <form action="/action_page.php" class="form-container">
-    <h1>StudioToStadium</h1>
+    <h1>LOGIN</h1>
 
     <label for="email" style="font-size: 12px"><b>Username</b></label>
     <input type="text" placeholder="Enter Email" name="email" required>
@@ -115,20 +130,71 @@ h3 {
     <label for="psw" style="font-size: 12px"><b>Password</b></label>
     <input type="password" placeholder="Enter Password" name="psw" required>
 
-    <h3>Forgot Password?</h3>
+    <h2>Forgot Password?</h2>
 
     <button type="submit" class="btn">LOGIN</button>
-    <button type="button" class="btn cancel" onclick="closeForm()">SIGN UP</button>
+    <button type="button" class="btn signup" onclick="openSignUpForm()">SIGN UP</button>
   </form>
 </div>
 
+<div class="form-popup" id="mySignUpForm">
+  <form action="/action_page.php" class="form-container">
+    <h3>SIGN UP</h3>
+
+    <label for="name" style="font-size: 12px"><b>Full Name</b></label>
+    <input type="text" placeholder="Enter Full Name" name="email" required>
+
+    <label for="Username" style="font-size: 12px"><b>Username</b></label>
+    <input type="text" placeholder="Enter Username" name="email" required>
+
+    <label for="email" style="font-size: 12px"><b>Email</b></label>
+    <input type="text" placeholder="Enter Email" name="email" required>
+
+    <label for="email" style="font-size: 12px"><b>Confirm Email</b></label>
+    <input type="text" placeholder="Enter Email" name="email" required>
+
+    <label for="psw" style="font-size: 12px"><b>Password</b></label>
+    <input type="password" placeholder="Enter Password" name="psw" required>
+
+    <label for="psw" style="font-size: 12px"><b>Confirm Password</b></label>
+    <input type="password" placeholder="Enter Password" name="psw" required>
+
+    <hr class="rounded">
+
+    <label for="name" style="font-size: 12px"><b>Name on Card</b></label>
+    <input type="text" placeholder="Enter Full Name" name="email" required>
+
+    <label for="name" style="font-size: 12px"><b>Card Number (Dashes not required)</b></label>
+    <input type="text" placeholder="0000-0000-0000-0000" name="email" required>
+
+    <label for="exp" style="font-size: 12px; width: 50%"><b>Exp. Date</b>
+    <input type="text" placeholder="MM/YYYY" name="experationdate"></label>
+
+    <label for="cvv" style="font-size: 12px; width: 48.9%"><b>CVV</b>
+    <input maxlength="3" pattern="[0-9][0-9][0-9]" name="cvvnumber" type="text" placeholder="XXX"></label>
+
+    <button type="submit" class="btn">SIGN UP</button>
+    <button type="button" class="btn signup" onclick="closeForm()">CANCEL</button>
+  </form>
+</div>
+
+
 <script>
 function openForm() {
-  document.getElementById("myForm").style.display = "block";
+  if(document.getElementById("mySignUpForm").style.display =="block"){
+    document.getElementById("mySignUpForm").style.display = "none"
+  }
+  document.getElementById("myLogInForm").style.display = "block";
+}
+
+function openSignUpForm() {
+  document.getElementById("myLogInForm").style.display = "none";
+  document.getElementById("mySignUpForm").style.display = "block";
 }
 
 function closeForm() {
-  document.getElementById("myForm").style.display = "none";
+  document.getElementById("mySignUpForm").style.display = "none";
+  document.getElementById("myLogInForm").style.display = "block";
 }
 </script>
 
