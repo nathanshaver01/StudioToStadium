@@ -12,9 +12,9 @@
       <body>
       
       <nav class="navbar navbar-default">
-        <div class="container-fluid" style=font-family: arbotek, sans-serif;>
+        <div class="container-fluid" style=font-family:arbotek,sans-serif;>
           <div class="navbar-header">
-            <a class="navbar-brand" href="/" style=font-family: arbotek, sans-serif; >StudioToStadium</a>
+            <a class="navbar-brand" href="/" style=font-family:arbotek,sans-serif; >StudioToStadium</a>
           </div>
           <ul class="nav navbar-nav navbar-right">
             <li class="active"><a href="/">HOME</a></li>
@@ -42,6 +42,7 @@
 
     <div class="form-popup" id="myLogInForm">
       <form action="/action_page.php" class="form-container">
+        <span class="close" onclick="exitForm()">&times;</span> 
         <h1>LOGIN</h1>
     
         <label for="email" style="font-size: 12px"><b>Username</b></label>
@@ -59,6 +60,7 @@
     
     <div class="form-popup" id="mySignUpForm">
       <form action="/action_page.php" class="form-container">
+        <span class="close" onclick="exitForm()">&times;</span>
         <h3>SIGN UP</h3>
     
         <label for="name" style="font-size: 12px"><b>Full Name</b></label>
@@ -315,6 +317,13 @@ function openSignUpForm() {
 function closeForm() {
   document.getElementById("mySignUpForm").style.display = "none";
   document.getElementById("myLogInForm").style.display = "block";
+}
+
+function exitForm(){
+  if(document.getElementById("mySignUpForm").style.display =="block"){
+    document.getElementById("mySignUpForm").style.display = "none"
+  }
+  document.getElementById("myLogInForm").style.display = "none";
 }
 </script>
 
