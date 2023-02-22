@@ -9,6 +9,15 @@ const client = new Client({
 })
 
 client.connect();
+//need to change pk to add new row
+client.query('INSERT INTO users VALUES (2, \'a@gmail.com\', \'joe\', \'mama\', 0987654321, false, \'swordfish\', DATE \'2024-05-24\', false)', (err, res)=>{
+	if(!err){
+		console.log(res.rows);
+	}
+	else {
+		console.log(err.message);
+	}
+})
 
 client.query('Select * from users', (err, res)=>{
 	if(!err){
@@ -19,15 +28,7 @@ client.query('Select * from users', (err, res)=>{
 	}
 })
 
-client.query('Select user_id from users', (err, res)=>{
-	if(!err){
-		console.log(res.rows);
-	}
-	else {
-		console.log(err.message);
-	}
-})
+
 
 //INSERT INTO users VALUES (2, "a@gmail.com", "joe", "mama", 0987654321, false, "swordfish", 4/23/2024, false)
-
 client.end;
