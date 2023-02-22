@@ -28,6 +28,6 @@ client.query('Select user_id from users', (err, res)=>{
 	}
 })
 
-INSERT INTO client VALUES (2, "a@gmail.com", "joe", "mama", 0987654321, false, "swordfish", )
+//INSERT INTO users VALUES (2, "a@gmail.com", "joe", "mama", 0987654321, false, "swordfish", 4/23/2024, false)
 
 client.end;
