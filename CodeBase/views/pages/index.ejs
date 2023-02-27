@@ -11,6 +11,22 @@
 
       <body>
       
+<<<<<<< HEAD:CodeBase/views/pages/index.ejs
+=======
+      <nav class="navbar navbar-default">
+        <div class="container-fluid" style=font-family:arbotek,sans-serif;>
+          <div class="navbar-header">
+            <a class="navbar-brand" href="/" style=font-family:arbotek,sans-serif; >StudioToStadium</a>
+          </div>
+          <ul class="nav navbar-nav navbar-right">
+            <li class="active"><a href="/">HOME</a></li>
+            <li><a href="/collegiate_teams">COLLEGIATE TEAMS</a></li>
+            <li><a href="/settings">ABOUT</a></li>
+            <li><a class="open-button" onclick="openForm()" href="#">LOGIN</a></li>
+          </ul>
+        </div>
+      </nav>
+>>>>>>> master:CodeBase/index.html
       
       <div class="hero-image">
         
@@ -29,6 +45,7 @@
 
     <div class="form-popup" id="myLogInForm">
       <form action="/action_page.php" class="form-container">
+        <span class="close" onclick="exitForm()">&times;</span> 
         <h1>LOGIN</h1>
     
         <label for="email" style="font-size: 12px"><b>Username</b></label>
@@ -46,6 +63,7 @@
     
     <div class="form-popup" id="mySignUpForm">
       <form action="/action_page.php" class="form-container">
+        <span class="close" onclick="exitForm()">&times;</span>
         <h3>SIGN UP</h3>
     
         <label for="name" style="font-size: 12px"><b>Full Name</b></label>
@@ -143,16 +161,8 @@
   z-index: 50;
 }
 
-.button-57:hover:after {
-  transform-origin: bottom center;
-  transform: skewY(9.3deg) scaleY(2);
-}
 
-.button-57:hover span:last-child {
-  transform: translateX(-50%) translateY(-100%);
-  opacity: 1;
-  transition: all 900ms cubic-bezier(0.48, 0, 0.12, 1);
-}
+
 .about-home {
   background-color: black;
   font-family:arbotek, sans-serif; 
@@ -160,9 +170,10 @@
   text-align: center;
   display:block;
   width: auto;
+  padding-top: 3%;
   padding-left: 20%;
   padding-right: 20%;
-  padding-bottom: 15px;
+  padding-bottom: 3%;
   font-size: medium;
   line-height: 150%;
   
@@ -309,6 +320,13 @@ function openSignUpForm() {
 function closeForm() {
   document.getElementById("mySignUpForm").style.display = "none";
   document.getElementById("myLogInForm").style.display = "block";
+}
+
+function exitForm(){
+  if(document.getElementById("mySignUpForm").style.display =="block"){
+    document.getElementById("mySignUpForm").style.display = "none"
+  }
+  document.getElementById("myLogInForm").style.display = "none";
 }
 </script>
 
