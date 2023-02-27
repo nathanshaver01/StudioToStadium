@@ -1,13 +1,38 @@
 <nav class="navbar navbar-default">
-    <div class="container-fluid" style=font-family: arbotek, sans-serif;>
+    <div class="container-fluid" id="navBar" style=font-family:arbotek,sans-serif;>
       <div class="navbar-header">
-        <a class="navbar-brand" href="/" style=font-family: arbotek, sans-serif; >StudioToStadium</a>
+        <a class="navbar-brand" href="/" style=font-family:arbotek,sans-serif; >StudioToStadium</a>
       </div>
       <ul class="nav navbar-nav navbar-right">
-        <li class="active"><a href="/">HOME</a></li>
-        <li><a href="/collegiate_teams">COLLEGIATE TEAMS</a></li>
-        <li><a href="/settings">ABOUT</a></li>
-        <li><a class="open-button" onclick="openForm()" href="#">LOGIN</a></li>
+        <li class="navBtns" id="navHome"><a href="/">HOME</a></li>
+        <li class="navBtns" id="navCollegiateTeams"><a href="/collegiate_teams">COLLEGIATE TEAMS</a></li>
+        <li class="navBtns" id="navAbout"><a href="/settings">ABOUT</a></li>
+        <li class="navBtns"><a class="open-button" onclick="openForm()" href="#">LOGIN</a></li>
       </ul>
     </div>
-  </nav>
+</nav>
+
+<script>
+// Add active class to the current button (highlight it)
+var pageUrl= window.location.href
+if(pageUrl == "http://localhost:3000/"){
+  document.getElementById("navHome").className += " active"
+}
+else if(pageUrl == "http://localhost:3000/collegiate_teams"){
+  document.getElementById("navCollegiateTeams").className += " active"
+
+}
+else if(pageUrl == "http://localhost:3000/settings"){
+  document.getElementById("navAbout").className += " active"
+
+}
+var header = document.getElementById("navBar");
+var btns = header.getElementsByClassName("navBtns");
+for (var i = 0; i < btns.length; i++) {
+  btns[i].addEventListener("click", function() {
+  var current = document.getElementsByClassName("active");
+  current[0].className = current[0].className.replace(" active", "");
+  this.className += " active";
+  });
+}
+</script>
