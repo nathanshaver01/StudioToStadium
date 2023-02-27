@@ -1,22 +1,32 @@
-const express = require('express');
-const app = express();
-const port = process.env.PORT || 5000;
+var express = require('express');
+var app = express();
 
-app.get('/', (req, res) => {//get requests to the root ("/") will route here
-    res.sendFile('index.html', {root: __dirname});//server responds by sending the index.html file to the client's browser
-//the .sendFile method needs the absolute path to the file, see: https://expressjs.com/en/4x/api.html#res.sendFile 
+app.set('view engine', 'ejs');
+const ejs = require('ejs');
+
+
+
+
+
+
+//const port = process.env.PORT || 5000;
+
+app.get('/', function (req,res) {
+    res.render('pages/index');
+});
+app.get('/collegiate_teams', function (req,res) {
+    res.render('pages/collegiate_teams');
+});
+app.get('/settings', function (req,res) {
+    res.render('pages/settings');
+});
+app.get('/testPull', function (req,res) {
+    res.render('pages/testPull');
 });
 
-app.get('/collegiate_teams', (req, res) => {//get requests to the profile page ("/profile") will route here
-    res.sendFile('collegiate_teams.html', {root: __dirname});//server responds by sending the profile.html file to the client's browser
-//the .sendFile method needs the absolute path to the file, see: https://expressjs.com/en/4x/api.html#res.sendFile 
-});
+app.listen(3000);
+console.log('3000 is the magic port');
 
-app.get('/settings', (req, res) => {//get requests to the profile page ("/profile") will route here
-    res.sendFile('settings.html', {root: __dirname});//server responds by sending the profile.html file to the client's browser
-//the .sendFile method needs the absolute path to the file, see: https://expressjs.com/en/4x/api.html#res.sendFile 
-});
-
-app.listen(port, () => {
+/*app.listen(port, () => {
     console.log(`Now listening on port ${port}`);
-}); 
+}); */
