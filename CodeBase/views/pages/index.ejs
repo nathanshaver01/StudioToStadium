@@ -11,87 +11,85 @@
       </head>
 
       <body>
-     <div class="hero-image">
+
+        <div class="form-popup" id="myLogInForm">
+          <form action="/action_page.php" class="form-container">
+            <span class="close" onclick="exitForm()">&times;</span> 
+            <h1>LOGIN</h1>
+        
+            <label for="email" style="font-size: 12px"><b>Username</b></label>
+            <input type="text" placeholder="Enter Email" name="email" required>
+        
+            <label for="psw" style="font-size: 12px"><b>Password</b></label>
+            <input type="password" placeholder="Enter Password" name="psw" required>
+        
+            <h2>Forgot Password?</h2>
+        
+            <button type="submit" class="btn">LOGIN</button>
+            <button type="button" class="btn signup" onclick="openSignUpForm()">SIGN UP</button>
+          </form>
+        </div>
+        
+        <div class="form-popup" id="mySignUpForm">
+          <form action="/action_page.php" class="form-container">
+            <span class="close" onclick="exitForm()">&times;</span>
+            <h3>SIGN UP</h3>
+        
+            <label for="name" style="font-size: 12px"><b>Full Name</b></label>
+            <input type="text" placeholder="Enter Full Name" name="email" required>
+        
+            <label for="Username" style="font-size: 12px"><b>Username</b></label>
+            <input type="text" placeholder="Enter Username" name="email" required>
+        
+            <label for="email" style="font-size: 12px"><b>Email</b></label>
+            <input type="text" placeholder="Enter Email" name="email" required>
+        
+            <label for="email" style="font-size: 12px"><b>Confirm Email</b></label>
+            <input type="text" placeholder="Enter Email" name="email" required>
+        
+            <label for="psw" style="font-size: 12px"><b>Password</b></label>
+            <input type="password" placeholder="Enter Password" name="psw" required>
+        
+            <label for="psw" style="font-size: 12px"><b>Confirm Password</b></label>
+            <input type="password" placeholder="Enter Password" name="psw" required>
+        
+            <hr class="rounded">
+        
+            <label for="name" style="font-size: 12px"><b>Name on Card</b></label>
+            <input type="text" placeholder="Enter Full Name" name="email" required>
+        
+            <label for="name" style="font-size: 12px"><b>Card Number (Dashes not required)</b></label>
+            <input type="text" placeholder="0000-0000-0000-0000" name="email" required>
+        
+            <label for="exp" style="font-size: 12px; width: 50%"><b>Exp. Date</b>
+            <input type="text" placeholder="MM/YYYY" name="experationdate"></label>
+        
+            <label for="cvv" style="font-size: 12px; width: 48.9%"><b>CVV</b>
+            <input maxlength="3" pattern="[0-9][0-9][0-9]" name="cvvnumber" type="text" placeholder="XXX"></label>
+        
+            <button type="submit" class="btn">SIGN UP</button>
+            <button type="button" class="btn signup" onclick="closeForm()">CANCEL</button>
+          </form>
+        </div>
+        
+      <div class="cover" id="coverBackground">
+
+      </div>
+      <div class="hero-image">
         
       </div>
 
       <div class="about-home">
 
-        <p style="font-family: 'Outfit'; font-size: 32px; padding-bottom:15px ">OUR MISSION</p>
-        <p style= "letter-spacing: 1.1px;">Studio to Stadium exists to seamlessly unite dancers and coaches across the nation. </p>
-          <p style = "letter-spacing: 1.1px;">We strive to facilitate the recruiting process through authentic connections, empowering the individual and providing equal opportunity to all prospective dancers </p>
+        <p style="font-size:large">OUR MISSION</p>
+        <p>Studio to Stadium exists to seamlessly unite dancers and coaches across the nation. </p>
+          <p>We strive to facilitate the recruiting process through authentic connections, empowering the individual and providing equal opportunity to all prospective dancers </p>
 
-          <p style="letter-spacing: 1.1px;">We are driven by diversity and inclusion, integrity, leadership, and passion.</p>
-          <br>
-          <button class="button-57" role="button"><span class="text">SIGN UP</span><span>Alternate text</span></button>
-          
-      </div>
-      <div class="three-photo-graphic-container">
-
-     <hr class="divider1">
-     <hr class="divider1">
-          
+          <p>We are driven by diversity and inclusion, integrity, leadership, and passion.</p>
+          <button type="button" class="button-57" onclick="openSignUpForm()">SIGN UP</button>
       </div>
 
-    <div class="form-popup" id="myLogInForm">
-      <form action="/action_page.php" class="form-container">
-        <span class="close" onclick="exitForm()">&times;</span> 
-        <h1>LOGIN</h1>
     
-        <label for="email" style="font-size: 12px"><b>Username</b></label>
-        <input type="text" placeholder="Enter Email" name="email" required>
-    
-        <label for="psw" style="font-size: 12px"><b>Password</b></label>
-        <input type="password" placeholder="Enter Password" name="psw" required>
-    
-        <h2>Forgot Password?</h2>
-    
-        <button type="submit" class="btn">LOGIN</button>
-        <button type="button" class="btn signup" onclick="openSignUpForm()">SIGN UP</button>
-      </form>
-    </div>
-    
-    <div class="form-popup" id="mySignUpForm">
-      <form action="/action_page.php" class="form-container">
-        <span class="close" onclick="exitForm()">&times;</span>
-        <h3>SIGN UP</h3>
-    
-        <label for="name" style="font-size: 12px"><b>Full Name</b></label>
-        <input type="text" placeholder="Enter Full Name" name="email" required>
-    
-        <label for="Username" style="font-size: 12px"><b>Username</b></label>
-        <input type="text" placeholder="Enter Username" name="email" required>
-    
-        <label for="email" style="font-size: 12px"><b>Email</b></label>
-        <input type="text" placeholder="Enter Email" name="email" required>
-    
-        <label for="email" style="font-size: 12px"><b>Confirm Email</b></label>
-        <input type="text" placeholder="Enter Email" name="email" required>
-    
-        <label for="psw" style="font-size: 12px"><b>Password</b></label>
-        <input type="password" placeholder="Enter Password" name="psw" required>
-    
-        <label for="psw" style="font-size: 12px"><b>Confirm Password</b></label>
-        <input type="password" placeholder="Enter Password" name="psw" required>
-    
-        <hr class="rounded">
-    
-        <label for="name" style="font-size: 12px"><b>Name on Card</b></label>
-        <input type="text" placeholder="Enter Full Name" name="email" required>
-    
-        <label for="name" style="font-size: 12px"><b>Card Number (Dashes not required)</b></label>
-        <input type="text" placeholder="0000-0000-0000-0000" name="email" required>
-    
-        <label for="exp" style="font-size: 12px; width: 50%"><b>Exp. Date</b>
-        <input type="text" placeholder="MM/YYYY" name="experationdate"></label>
-    
-        <label for="cvv" style="font-size: 12px; width: 48.9%"><b>CVV</b>
-        <input maxlength="3" pattern="[0-9][0-9][0-9]" name="cvvnumber" type="text" placeholder="XXX"></label>
-    
-        <button type="submit" class="btn">SIGN UP</button>
-        <button type="button" class="btn signup" onclick="closeForm()">CANCEL</button>
-      </form>
-    </div>
   </body>
     </html>
 
@@ -220,9 +218,36 @@ body {font-family: arbotek, sans-serif;
 .form-popup {
     display: none;
     max-width: 400px;
-    margin: 0 auto;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
     z-index: 9;
+    position: absolute;
 }
+
+.coverOff {
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0);
+    z-index: -1;
+
+}
+
+.coverOn {
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 1;
+
+}
+
 
 /* Add styles to the form container */
 .form-container {
@@ -312,16 +337,19 @@ function openForm() {
     document.getElementById("mySignUpForm").style.display = "none"
   }
   document.getElementById("myLogInForm").style.display = "block";
+  document.getElementById("coverBackground").className = "coverOn";
 }
 
 function openSignUpForm() {
   document.getElementById("myLogInForm").style.display = "none";
   document.getElementById("mySignUpForm").style.display = "block";
+  document.getElementById("coverBackground").className = "coverOn";
 }
 
 function closeForm() {
   document.getElementById("mySignUpForm").style.display = "none";
   document.getElementById("myLogInForm").style.display = "block";
+  document.getElementById("coverBackground").className = "coverOn";
 }
 
 function exitForm(){
@@ -329,6 +357,6 @@ function exitForm(){
     document.getElementById("mySignUpForm").style.display = "none"
   }
   document.getElementById("myLogInForm").style.display = "none";
+  document.getElementById("coverBackground").className = "coverOff";
 }
 </script>
-
