@@ -1,4 +1,5 @@
 <html>
+  <link href='https://fonts.googleapis.com/css?family=Outfit' rel='stylesheet'>
   <%- include('../partials/navbar'); %>
     <head>
         <title>Studio To Stadium</title>
@@ -16,12 +17,19 @@
 
       <div class="about-home">
 
-        <p style="font-size:large">OUR MISSION</p>
-        <p>Studio to Stadium exists to seamlessly unite dancers and coaches across the nation. </p>
-          <p>We strive to facilitate the recruiting process through authentic connections, empowering the individual and providing equal opportunity to all prospective dancers </p>
+        <p style="font-family: 'Outfit'; font-size: 32px; padding-bottom:15px ">OUR MISSION</p>
+        <p style= "letter-spacing: 1.1px;">Studio to Stadium exists to seamlessly unite dancers and coaches across the nation. </p>
+          <p style = "letter-spacing: 1.1px;">We strive to facilitate the recruiting process through authentic connections, empowering the individual and providing equal opportunity to all prospective dancers </p>
 
-          <p>We are driven by diversity and inclusion, integrity, leadership, and passion.</p>
+          <p style="letter-spacing: 1.1px;">We are driven by diversity and inclusion, integrity, leadership, and passion.</p>
+          <br>
           <button class="button-57" role="button"><span class="text">SIGN UP</span><span>Alternate text</span></button>
+          
+      </div>
+      <div class="three-photo-graphic-container">
+
+     <hr class="divider1">
+     <hr class="divider1">
           
       </div>
 
@@ -91,6 +99,17 @@
 
 
 /* CSS */
+/* Thick black border */
+hr.divider1 {
+  width: 85%;
+  border: 2px solid black;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 1px 1px 2px;
+}
+hr.divider2 {
+  border: 3px solid black;
+}
 .button-57 {
   position: relative;
   overflow: hidden;
@@ -99,7 +118,8 @@
   display: inline-block;
   font-size: 15px;
   line-height: 15px;
-  padding: 18px 18px 17px;
+  letter-spacing: 1px;
+  padding: 20px 20px 18px;
   text-decoration: none;
   cursor: pointer;
   background: #dcdcdc;
