@@ -1,103 +1,100 @@
 <html>
   <link href='https://fonts.googleapis.com/css?family=Outfit' rel='stylesheet'>
   <%- include('../partials/navbar'); %>
-    <head>
-        <title>Studio To Stadium</title>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-      </head>
-
+       
       <body>
-
-        <div class="form-popup" id="myLogInForm">
-          <form action="/action_page.php" class="form-container">
-            <span class="close" onclick="exitForm()">&times;</span> 
-            <h1>LOGIN</h1>
         
-            <label for="email" style="font-size: 12px"><b>Username</b></label>
-            <input type="text" placeholder="Enter Email" name="email" required>
-        
-            <label for="psw" style="font-size: 12px"><b>Password</b></label>
-            <input type="password" placeholder="Enter Password" name="psw" required>
-        
-            <h2>Forgot Password?</h2>
-        
-            <button type="submit" class="btn">LOGIN</button>
-            <button type="button" class="btn signup" onclick="openSignUpForm()">SIGN UP</button>
-          </form>
-        </div>
-        
-        <div class="form-popup" id="mySignUpForm">
-          <form action="/action_page.php" class="form-container">
-            <span class="close" onclick="exitForm()">&times;</span>
-            <h3>SIGN UP</h3>
-        
-            <label for="name" style="font-size: 12px"><b>Full Name</b></label>
-            <input type="text" placeholder="Enter Full Name" name="email" required>
-        
-            <label for="Username" style="font-size: 12px"><b>Username</b></label>
-            <input type="text" placeholder="Enter Username" name="email" required>
-        
-            <label for="email" style="font-size: 12px"><b>Email</b></label>
-            <input type="text" placeholder="Enter Email" name="email" required>
-        
-            <label for="email" style="font-size: 12px"><b>Confirm Email</b></label>
-            <input type="text" placeholder="Enter Email" name="email" required>
-        
-            <label for="psw" style="font-size: 12px"><b>Password</b></label>
-            <input type="password" placeholder="Enter Password" name="psw" required>
-        
-            <label for="psw" style="font-size: 12px"><b>Confirm Password</b></label>
-            <input type="password" placeholder="Enter Password" name="psw" required>
-        
-            <hr class="rounded">
-        
-            <label for="name" style="font-size: 12px"><b>Name on Card</b></label>
-            <input type="text" placeholder="Enter Full Name" name="email" required>
-        
-            <label for="name" style="font-size: 12px"><b>Card Number (Dashes not required)</b></label>
-            <input type="text" placeholder="0000-0000-0000-0000" name="email" required>
-        
-            <label for="exp" style="font-size: 12px; width: 50%"><b>Exp. Date</b>
-            <input type="text" placeholder="MM/YYYY" name="experationdate"></label>
-        
-            <label for="cvv" style="font-size: 12px; width: 48.9%"><b>CVV</b>
-            <input maxlength="3" pattern="[0-9][0-9][0-9]" name="cvvnumber" type="text" placeholder="XXX"></label>
-        
-            <button type="submit" class="btn">SIGN UP</button>
-            <button type="button" class="btn signup" onclick="closeForm()">CANCEL</button>
-          </form>
-        </div>
-        
-      <div class="cover" id="coverBackground">
-
-      </div>
-      <div class="hero-image">
-        
-      </div>
+     <div class="hero-image"> </div>
 
       <div class="about-home">
 
         <p style="font-family: 'Outfit'; font-size: 32px; padding-bottom:15px ">OUR MISSION</p>
         <p style= "letter-spacing: 1.1px;">Studio to Stadium exists to seamlessly unite dancers and coaches across the nation. </p>
           <p style = "letter-spacing: 1.1px;">We strive to facilitate the recruiting process through authentic connections, empowering the individual and providing equal opportunity to all prospective dancers </p>
-          
+
           <p style="letter-spacing: 1.1px;">We are driven by diversity and inclusion, integrity, leadership, and passion.</p>
           <br>
-          <button type="button" class="button-57" onclick="openSignUpForm()">SIGN UP</button>
+          <button class="button-57" role="button"><span class="text">SIGN UP</span><span>Alternate text</span></button>
+          
       </div>
-
+  
       <div class="three-photo-graphic-container">
 
-        <hr class="divider1">
-        <hr class="divider1">
-   
+     <hr class="divider1">
+     <div class ="images" style = "display: flex; height: 30%; margin:auto;"> 
+      <div class = "image1" style = "margin: auto;">
+        <img src="https://i.imgur.com/hwlpWjH.jpg" alt="" style="height:250px">
+      </div>
+      <div class = "image2" style = "margin: auto;">
+        <img src="https://i.imgur.com/LwwQgs8.jpg" alt="" style="height:250px">
+      </div>
+      <div class = "image3" style = "margin: auto;">
+        <img src="https://i.imgur.com/1rQuNpc.jpg" alt="" style="height:250px">
+      </div>
+     </div>
+     <hr class="divider2">
+          
       </div>
 
+    <div class="form-popup" id="myLogInForm">
+      <form action="/action_page.php" class="form-container">
+        <span class="close" onclick="exitForm()">&times;</span> 
+        <h1>LOGIN</h1>
     
+        <label for="email" style="font-size: 12px"><b>Username</b></label>
+        <input type="text" placeholder="Enter Email" name="email" required>
+    
+        <label for="psw" style="font-size: 12px"><b>Password</b></label>
+        <input type="password" placeholder="Enter Password" name="psw" required>
+    
+        <h2>Forgot Password?</h2>
+    
+        <button type="submit" class="btn">LOGIN</button>
+        <button type="button" class="btn signup" onclick="openSignUpForm()">SIGN UP</button>
+      </form>
+    </div>
+    
+    <div class="form-popup" id="mySignUpForm">
+      <form action="/action_page.php" class="form-container">
+        <span class="close" onclick="exitForm()">&times;</span>
+        <h3>SIGN UP</h3>
+    
+        <label for="name" style="font-size: 12px"><b>Full Name</b></label>
+        <input type="text" placeholder="Enter Full Name" name="email" required>
+    
+        <label for="Username" style="font-size: 12px"><b>Username</b></label>
+        <input type="text" placeholder="Enter Username" name="email" required>
+    
+        <label for="email" style="font-size: 12px"><b>Email</b></label>
+        <input type="text" placeholder="Enter Email" name="email" required>
+    
+        <label for="email" style="font-size: 12px"><b>Confirm Email</b></label>
+        <input type="text" placeholder="Enter Email" name="email" required>
+    
+        <label for="psw" style="font-size: 12px"><b>Password</b></label>
+        <input type="password" placeholder="Enter Password" name="psw" required>
+    
+        <label for="psw" style="font-size: 12px"><b>Confirm Password</b></label>
+        <input type="password" placeholder="Enter Password" name="psw" required>
+    
+        <hr class="rounded">
+    
+        <label for="name" style="font-size: 12px"><b>Name on Card</b></label>
+        <input type="text" placeholder="Enter Full Name" name="email" required>
+    
+        <label for="name" style="font-size: 12px"><b>Card Number (Dashes not required)</b></label>
+        <input type="text" placeholder="0000-0000-0000-0000" name="email" required>
+    
+        <label for="exp" style="font-size: 12px; width: 50%"><b>Exp. Date</b>
+        <input type="text" placeholder="MM/YYYY" name="experationdate"></label>
+    
+        <label for="cvv" style="font-size: 12px; width: 48.9%"><b>CVV</b>
+        <input maxlength="3" pattern="[0-9][0-9][0-9]" name="cvvnumber" type="text" placeholder="XXX"></label>
+    
+        <button type="submit" class="btn">SIGN UP</button>
+        <button type="button" class="btn signup" onclick="closeForm()">CANCEL</button>
+      </form>
+    </div>
   </body>
     </html>
 
@@ -105,6 +102,14 @@
 
 
 /* CSS */
+.images {
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 7.5%;
+  padding-right: 7.5%;
+  padding-bottom: 7.5%;
+  
+}
 /* Thick black border */
 hr.divider1 {
   width: 85%;
@@ -114,7 +119,12 @@ hr.divider1 {
   box-shadow: 1px 1px 2px;
 }
 hr.divider2 {
-  border: 3px solid black;
+  width: 85%;
+  border: 2px solid black;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 2.5%;
+  box-shadow: 1px 1px 2px;
 }
 .button-57 {
   position: relative;
