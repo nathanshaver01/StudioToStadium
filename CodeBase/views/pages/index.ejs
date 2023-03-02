@@ -3,40 +3,8 @@
   <%- include('../partials/navbar'); %>
        
       <body>
-        
-     <div class="hero-image"> </div>
 
-      <div class="about-home">
-
-        <p style="font-family: 'Outfit'; font-size: 32px; padding-bottom:15px ">OUR MISSION</p>
-        <p style= "letter-spacing: 1.1px;">Studio to Stadium exists to seamlessly unite dancers and coaches across the nation. </p>
-          <p style = "letter-spacing: 1.1px;">We strive to facilitate the recruiting process through authentic connections, empowering the individual and providing equal opportunity to all prospective dancers </p>
-
-          <p style="letter-spacing: 1.1px;">We are driven by diversity and inclusion, integrity, leadership, and passion.</p>
-          <br>
-          <button class="button-57" role="button"><span class="text">SIGN UP</span><span>Alternate text</span></button>
-          
-      </div>
-  
-      <div class="three-photo-graphic-container">
-
-     <hr class="divider1">
-     <div class ="images" style = "display: flex; height: 30%; margin:auto;"> 
-      <div class = "image1" style = "margin: auto;">
-        <img src="https://i.imgur.com/hwlpWjH.jpg" alt="" style="height:250px">
-      </div>
-      <div class = "image2" style = "margin: auto;">
-        <img src="https://i.imgur.com/LwwQgs8.jpg" alt="" style="height:250px">
-      </div>
-      <div class = "image3" style = "margin: auto;">
-        <img src="https://i.imgur.com/1rQuNpc.jpg" alt="" style="height:250px">
-      </div>
-     </div>
-     <hr class="divider2">
-          
-      </div>
-
-    <div class="form-popup" id="myLogInForm">
+     <div class="form-popup" id="myLogInForm">
       <form action="/action_page.php" class="form-container">
         <span class="close" onclick="exitForm()">&times;</span> 
         <h1>LOGIN</h1>
@@ -95,6 +63,41 @@
         <button type="button" class="btn signup" onclick="closeForm()">CANCEL</button>
       </form>
     </div>
+
+    <div class="cover" id="coverBackground"></div>
+    <div class="hero-image"></div>
+
+      <div class="about-home">
+
+        <p style="font-family: 'Outfit'; font-size: 32px; padding-bottom:15px ">OUR MISSION</p>
+        <p style= "letter-spacing: 1.1px;">Studio to Stadium exists to seamlessly unite dancers and coaches across the nation. </p>
+          <p style = "letter-spacing: 1.1px;">We strive to facilitate the recruiting process through authentic connections, empowering the individual and providing equal opportunity to all prospective dancers </p>
+
+          <p style="letter-spacing: 1.1px;">We are driven by diversity and inclusion, integrity, leadership, and passion.</p>
+          <br>
+          <button type="button" class="button-57" onclick="openSignUpForm()">SIGN UP</button>
+          
+      </div>
+  
+      <div class="three-photo-graphic-container">
+
+     <hr class="divider1">
+     <div class ="images" style = "display: flex; height: 30%; margin:auto;"> 
+      <div class = "image1" style = "margin: auto;">
+        <img src="https://i.imgur.com/hwlpWjH.jpg" alt="" style="height:250px">
+      </div>
+      <div class = "image2" style = "margin: auto;">
+        <img src="https://i.imgur.com/LwwQgs8.jpg" alt="" style="height:250px">
+      </div>
+      <div class = "image3" style = "margin: auto;">
+        <img src="https://i.imgur.com/1rQuNpc.jpg" alt="" style="height:250px">
+      </div>
+     </div>
+     <hr class="divider2">
+          
+      </div>
+
+    
   </body>
     </html>
 
@@ -261,7 +264,7 @@ body {font-family: arbotek, sans-serif;
     top: 0;
     right: 0;
     bottom: 0;
-    background: rgba(0, 0, 0, 0.7);
+    background: rgba(0, 0, 0, 0.75);
     z-index: 1;
 
 }
