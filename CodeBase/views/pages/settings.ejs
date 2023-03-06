@@ -1,8 +1,9 @@
 <html>
+  <link href='https://fonts.googleapis.com/css?family=Outfit' rel='stylesheet'>
 <body>
 
     <head>
-        <title>Bootstrap Example</title>
+        <title>About</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
@@ -13,8 +14,72 @@
       
         <%- include('../partials/navbar'); %>
 
-<h1>This will be the about page.</h1>
+<h1 style="font-family: Outfit; text-align:center;font-weight:200;">ABOUT US</h1>
+<hr class="divider1">
+
+<div class="about-text">
+  <h2 style="font-family:Outfit; text-align:center;color:#c1a37f;">our story</h2>
+  <p>Studio to Stadium exists to seamlessly unite dancers and coaches across the nation. We strive
+    to facilitate the recruiting process through authentic connections, empowering the individual and
+    providing equal opportunity to all prospective dancers.
+    <br>
+    <br>
+    Abbey Nugent, the founder of Studio to Stadium is currently a D1A collegiate dance team coach
+    and experienced first hand the inadequate opportunities that coincide with recruitment. She saw
+    an increasingly desperate need for a centralized platform that provided connection within the
+    dance team community. A digitalized network that provided coaches with the tools to feel
+    supported and alongside a space for dancers to showcase their talents and achievements
+    outside traditional social media and emailing platforms.
+    <br>
+    <br>
+    Abbey has a Bachelor&#39;s degree in Advertising, Sociology Certificate, and a Master of The Arts in
+    Elementary education. Prior to Studio to Stadium, she had zero experience in entrepreneurship
+    or technology but knew she had a passion for working with young adults and sought to diversify
+    her involvement on campus outside of athletics.
+    <br>
+    <br>
+    Abbey connected with the Computer Science and Engineering program and teamed up with six
+    students that selected S2S as their senior capstone project. These students spent the next
+    school year developing the technology and bringing Abbey&#39;s vision to life. Through weekly
+    meetings, guidance from the class professor and their growing knowledge of the tech industry,
+    Studio to Stadium became a reality.
+    <br>
+    <br>
+    We are proud to continuously stay in alignment with our values and proudly claim that our
+    website was coded entirely by undergraduate students! We are committed to providing career
+    development and to continue utilizing the talents of aspiring young professionals on campus!</p>
+
+</div>
 
 </body>
+
 <%- include('../partials/footerTest'); %>
 </html>
+
+<style>
+  
+.about-text{
+  padding-bottom: 2%;
+  margin: auto;
+  width: 60%;
+  letter-spacing: 7%;
+  text-align: center;
+  font-family: arbotek, sans-serif;
+  line-height: 1.5;
+ 
+}
+hr.divider1 {
+  width: 30%;
+  border: 1px solid black;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 1px 1px 2px;
+}
+
+ .h1 {
+  margin-left: 10%;
+ }
+ body {
+  min-height: 100vh;
+}
+</style>
