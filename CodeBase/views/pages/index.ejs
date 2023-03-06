@@ -1,7 +1,9 @@
 <html>
-  <link href='https://fonts.googleapis.com/css?family=Outfit' rel='stylesheet'>
-  <%- include('../partials/navbar'); %>
-       
+  <head>
+    <link href='https://fonts.googleapis.com/css?family=Outfit' rel='stylesheet'>
+    <link rel="stylesheet" href="./login.css">
+    <%- include('../partials/navbar'); %>
+  </head>
       <body>
 
         <div class="form-popup" id="myLogInForm">
@@ -28,33 +30,33 @@
             <h3>SIGN UP</h3>
         
             <label for="name" style="font-size: 12px"><b>Full Name</b></label>
-            <input type="text" placeholder="Enter Full Name" name="email" required>
+            <input type="text" placeholder="Enter Full Name" name="name" required>
         
             <label for="Username" style="font-size: 12px"><b>Username</b></label>
-            <input type="text" placeholder="Enter Username" name="email" required>
+            <input type="text" placeholder="Enter Username" name="Username" required>
         
             <label for="email" style="font-size: 12px"><b>Email</b></label>
             <input type="text" placeholder="Enter Email" name="email" required>
         
             <label for="email" style="font-size: 12px"><b>Confirm Email</b></label>
-            <input type="text" placeholder="Enter Email" name="email" required>
+            <input type="text" placeholder="Enter Email" name="confemail" required>
         
             <label for="psw" style="font-size: 12px"><b>Password</b></label>
-            <input type="password" placeholder="Enter Password" name="psw" required>
+            <input type="password" minlength="8" placeholder="Enter Password" name="psw" required>
         
             <label for="psw" style="font-size: 12px"><b>Confirm Password</b></label>
-            <input type="password" placeholder="Enter Password" name="psw" required>
+            <input type="password" minlength="8" placeholder="Enter Password" name="confpsw" required>
         
             <hr class="rounded">
         
             <label for="name" style="font-size: 12px"><b>Name on Card</b></label>
-            <input type="text" placeholder="Enter Full Name" name="email" required>
+            <input type="text" placeholder="Enter Full Name" name="nameoncard" required>
         
-            <label for="name" style="font-size: 12px"><b>Card Number (Dashes not required)</b></label>
-            <input type="text" placeholder="0000-0000-0000-0000" name="email" required>
+            <label for="name" style="font-size: 12px"><b>Card Number (Dashes not included)</b></label>
+            <input type="text" placeholder="0000 0000 0000 0000" maxlength="16" pattern="[0-9]{16}" name="cardnumber" required>
         
             <label for="exp" style="font-size: 12px; width: 50%"><b>Exp. Date</b>
-            <input type="text" placeholder="MM/YYYY" name="experationdate"></label>
+            <input type="text" placeholder="MM/YYYY" pattern="^((0[1-9])|(1[0-2]))/((2022)|(20[1-2][0-9]))$" name="experationdate"></label>
         
             <label for="cvv" style="font-size: 12px; width: 48.9%"><b>CVV</b>
             <input maxlength="3" pattern="[0-9][0-9][0-9]" name="cvvnumber" type="text" placeholder="XXX"></label>
@@ -75,7 +77,7 @@
 
           <p style="letter-spacing: 1.1px;">We are driven by diversity and inclusion, integrity, leadership, and passion.</p>
           <br>
-          <button class="button-57" role="button"><span class="text">SIGN UP</span><span>Alternate text</span></button>
+          <button type="button" class="button-57" onclick="openSignUpForm()">SIGN UP</button>
           
       </div>
   
@@ -99,7 +101,7 @@
     
     <%- include('../partials/footerTest'); %>
   </body>
-    </html>
+</html>
 
 <style>
 
@@ -277,7 +279,6 @@ body {font-family: arbotek, sans-serif;
 
 }
 
-
 /* Add styles to the form container */
 .form-container {
     max-width: 400px;
@@ -355,8 +356,6 @@ hr.rounded {
   border-radius: 5px;
 }
 
-
-
 </style>
 
 
@@ -388,4 +387,5 @@ function exitForm(){
   document.getElementById("myLogInForm").style.display = "none";
   document.getElementById("coverBackground").className = "coverOff";
 }
+
 </script>
