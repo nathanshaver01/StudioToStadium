@@ -1,11 +1,11 @@
 const { Client } = require('pg');
 
 const client = new Client({
-	host: "localhost",
+	host: "mahmud.db.elephantsql.com",
 	port: 5432,
-	user: "postgres",
-	password: "Scout101", //change password!
-	database: "studio_to_stadium"
+	user: "hidjkctp",
+	password: "a-1VzII_pxhCj07Ho7tt4mrvb8EkNrAC", //change password!
+	database: "hidjkctp"
 })
 
 client.connect();
@@ -29,6 +29,6 @@ client.query('Select * from users', (err, res)=>{
 })
 
 
-//need to encrypt password somehow?
+//need to encrypt passwords somehow?
 //INSERT INTO users VALUES (2, "a@gmail.com", "joe", "mama", 0987654321, false, "swordfish", 4/23/2024, false)
 client.end;
