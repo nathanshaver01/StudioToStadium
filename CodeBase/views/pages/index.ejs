@@ -46,6 +46,16 @@
         
             <label for="psw" style="font-size: 12px"><b>Confirm Password</b></label>
             <input type="password" minlength="8" placeholder="Enter Password" name="confpsw" required>
+
+          <div class="controls">
+            <label class="radio" style="margin-top: -1.5%">
+              <input type="radio" name="coachOpt" value="3" >Coach
+            </label>
+            <label class="radio">
+              <input type="radio" name="athleteOpt" value="1">
+              Athlete
+            </label>
+          </div>
         
             <hr class="rounded">
         
@@ -351,9 +361,25 @@ h3{
 }
 
 hr.rounded {
-  border-top: 3px dashed #bbb;
+  border-top: 3px dashed rgb(159, 158, 158);
   margin-top: -3px;
   border-radius: 5px;
+}
+
+/* Radio Buttons for Roles*/
+.controls {
+  display: flex;
+  margin-left: 15%;
+  padding: 0;
+  
+}
+
+.radio {
+  flex: 1 0 auto;
+  display: block;
+  flex-direction: column;
+  align-items:center;
+  margin-top: -5%;
 }
 
 </style>
