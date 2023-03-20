@@ -4,24 +4,22 @@ var app = express();
 app.set('view engine', 'ejs');
 const ejs = require('ejs');
 
-
-
-
-
-
 //const port = process.env.PORT || 5000;
 
 app.get('/', function (req,res) {
     res.render('pages/index');
 });
-app.get('/collegiate_teams', function (req,res) {
-    res.render('pages/collegiate_teams');
+app.get('/conferences', function (req,res) {
+    res.render('pages/conferences');
 });
-app.get('/settings', function (req,res) {
-    res.render('pages/settings');
+app.get('/about', function (req,res) {
+    res.render('pages/about');
 });
 app.get('/coachFeed', function (req,res) {
     res.render('pages/coachFeed');
+});
+app.get('/athlete_profile', function (req,res) {
+    res.render('pages/athlete_profile');
 });
 
 app.listen(3000);
