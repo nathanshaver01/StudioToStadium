@@ -4,109 +4,33 @@
     <link rel="stylesheet" href="./login.css">
     <%- include('../partials/navbar'); %>
   </head>
-      <body>
+  <body>
+    <div class="cover" id="coverBackground"></div>
+    <div class="hero-image"> </div>
 
-        <div class="form-popup" id="myLogInForm">
-          <form action="/action_page.php" class="form-container">
-            <span class="close" onclick="exitForm()">&times;</span> 
-            <h1>LOGIN</h1>
-        
-            <label for="email" style="font-size: 12px"><b>Username</b></label>
-            <input type="text" placeholder="Enter Email" name="email" required>
-        
-            <label for="psw" style="font-size: 12px"><b>Password</b></label>
-            <input type="password" placeholder="Enter Password" name="psw" required>
-        
-            <h2>Forgot Password?</h2>
-        
-            <button type="submit" class="btn">LOGIN</button>
-            <button type="button" class="btn signup" onclick="openSignUpForm()">SIGN UP</button>
-          </form>
-        </div>
-        
-        <div class="form-popup" id="mySignUpForm">
-          <form action="/action_page.php" class="form-container">
-            <span class="close" onclick="exitForm()">&times;</span>
-            <h3>SIGN UP</h3>
-        
-            <label for="name" style="font-size: 12px"><b>Full Name</b></label>
-            <input type="text" placeholder="Enter Full Name" name="name" required>
-        
-            <label for="Username" style="font-size: 12px"><b>Username</b></label>
-            <input type="text" placeholder="Enter Username" name="Username" required>
-        
-            <label for="email" style="font-size: 12px"><b>Email</b></label>
-            <input type="text" placeholder="Enter Email" name="email" required>
-        
-            <label for="email" style="font-size: 12px"><b>Confirm Email</b></label>
-            <input type="text" placeholder="Enter Email" name="confemail" required>
-        
-            <label for="psw" style="font-size: 12px"><b>Password</b></label>
-            <input type="password" minlength="8" placeholder="Enter Password" name="psw" required>
-        
-            <label for="psw" style="font-size: 12px"><b>Confirm Password</b></label>
-            <input type="password" minlength="8" placeholder="Enter Password" name="confpsw" required>
+    <div class="about-home">
+      <p style="font-family: 'Outfit'; font-size: 32px; padding-bottom:15px ">OUR MISSION</p>
+      <p style= "letter-spacing: 1.1px;">Studio to Stadium exists to seamlessly unite dancers and coaches across the nation. </p>
+        <p style = "letter-spacing: 1.1px;">We strive to facilitate the recruiting process through authentic connections, empowering the individual and providing equal opportunity to all prospective dancers </p>
+        <p style="letter-spacing: 1.1px;">We are driven by diversity and inclusion, integrity, leadership, and passion.</p>
+        <br>
+        <button type="button" class="button-57" onclick="openSignUpForm()">SIGN UP</button>
+    </div>
 
-          <div class="controls">
-            <label class="radio" style="margin-top: -1.5%">
-              <input type="radio" name="coachOpt" value="3" >Coach
-            </label>
-            <label class="radio">
-              <input type="radio" name="athleteOpt" value="1">
-              Athlete
-            </label>
-          </div>
-        
-            <hr class="rounded">
-        
-            <label for="name" style="font-size: 12px"><b>Name on Card</b></label>
-            <input type="text" placeholder="Enter Full Name" name="nameoncard" required>
-        
-            <label for="name" style="font-size: 12px"><b>Card Number (Dashes not included)</b></label>
-            <input type="text" placeholder="0000 0000 0000 0000" maxlength="16" pattern="[0-9]{16}" name="cardnumber" required>
-        
-            <label for="exp" style="font-size: 12px; width: 50%"><b>Exp. Date</b>
-            <input type="text" placeholder="MM/YYYY" pattern="^((0[1-9])|(1[0-2]))/((2022)|(20[1-2][0-9]))$" name="experationdate"></label>
-        
-            <label for="cvv" style="font-size: 12px; width: 48.9%"><b>CVV</b>
-            <input maxlength="3" pattern="[0-9][0-9][0-9]" name="cvvnumber" type="text" placeholder="XXX"></label>
-        
-            <button type="submit" class="btn">SIGN UP</button>
-            <button type="button" class="btn signup" onclick="closeForm()">CANCEL</button>
-          </form>
-        </div>
-       
-      <div class="cover" id="coverBackground"></div>
-     <div class="hero-image"> </div>
-
-      <div class="about-home">
-
-        <p style="font-family: 'Outfit'; font-size: 32px; padding-bottom:15px ">OUR MISSION</p>
-        <p style= "letter-spacing: 1.1px;">Studio to Stadium exists to seamlessly unite dancers and coaches across the nation. </p>
-          <p style = "letter-spacing: 1.1px;">We strive to facilitate the recruiting process through authentic connections, empowering the individual and providing equal opportunity to all prospective dancers </p>
-
-          <p style="letter-spacing: 1.1px;">We are driven by diversity and inclusion, integrity, leadership, and passion.</p>
-          <br>
-          <button type="button" class="button-57" onclick="openSignUpForm()">SIGN UP</button>
-          
+    <div class="three-photo-graphic-container">
+      <hr class="divider1">
+      <div class ="words" style = "display: flex; margin:auto;"> 
+        <img src="https://i.imgur.com/hr9k0Pj.png" alt="" style="height:20px; margin:auto">
+        <img src="https://i.imgur.com/axamLXH.png" alt="" style="height:20px; margin:auto">
+        <img src="https://i.imgur.com/d97r8JM.png" alt="" style="height:20px; margin:auto">
       </div>
-  
-      <div class="three-photo-graphic-container">
-
-        <hr class="divider1">
-        <div class ="words" style = "display: flex; margin:auto;"> 
-          <img src="https://i.imgur.com/hr9k0Pj.png" alt="" style="height:20px; margin:auto">
-          <img src="https://i.imgur.com/axamLXH.png" alt="" style="height:20px; margin:auto">
-          <img src="https://i.imgur.com/d97r8JM.png" alt="" style="height:20px; margin:auto">
-        </div>
-        <div class ="images" style = "display: flex; height: 30%; margin:auto;"> 
-          <img src="https://i.imgur.com/hwlpWjH.jpg" alt="" style="height:200px; margin:auto">
-          <img src="https://i.imgur.com/cJ9jIMX.jpg" alt="" style="height:200px; margin:auto">
-          <img src="https://i.imgur.com/Mjpahha.jpg" alt="" style="height:200px; margin:auto">
-        </div>
-        <hr class="divider2">
-          
+      <div class ="images" style = "display: flex; height: 30%; margin:auto;"> 
+        <img src="https://i.imgur.com/hwlpWjH.jpg" alt="" style="height:200px; margin:auto">
+        <img src="https://i.imgur.com/cJ9jIMX.jpg" alt="" style="height:200px; margin:auto">
+        <img src="https://i.imgur.com/Mjpahha.jpg" alt="" style="height:200px; margin:auto">
       </div>
+      <hr class="divider2">
+    </div>
 
     
     <%- include('../partials/footerTest'); %>
@@ -114,8 +38,6 @@
 </html>
 
 <style>
-
-
 /* CSS */
 .images {
   margin-left: auto;
@@ -202,8 +124,6 @@ hr.divider2 {
   z-index: 50;
 }
 
-
-
 .about-home {
   background-color: black;
   font-family:arbotek, sans-serif; 
@@ -254,164 +174,4 @@ body {font-family: arbotek, sans-serif;
   margin: 0;
   padding: 0;}
 * {box-sizing: border-box;}
-
-/* The popup form - hidden by default */
-.form-popup {
-    display: none;
-    max-width: 400px;
-    margin-left: auto;
-    margin-right: auto;
-    left: 0;
-    right: 0;
-    z-index: 9;
-    position: absolute;
-}
-
-.coverOff {
-    position: fixed;
-    left: 0;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0);
-    z-index: -1;
-
-}
-
-.coverOn {
-    position: fixed;
-    left: 0;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.75);
-    z-index: 1;
-
-}
-
-/* Add styles to the form container */
-.form-container {
-    max-width: 400px;
-    padding: 10px;
-    background-color: #f1f1f1cb;
-}
-
-/* Full-width input fields */
-.form-container input[type=text], .form-container input[type=password] {
-    width: 100%;
-    padding: 15px;
-    margin: 0.5px 0 22px 0;
-    border: 1px solid black;
-    background: white;
-}
-
-/* When the inputs get focus, do something */
-.form-container input[type=text]:focus, .form-container input[type=password]:focus {
-    background-color: #ddd;
-    outline: none;
-}
-
-/* Set a style for the submit/login button */
-.form-container .btn {
-    background-color: black;
-    color: white;
-    padding: 16px 20px;
-    border: none;
-    cursor: pointer;
-    width: 50%;
-    margin-left:93px;
-    margin-bottom:10px;
-    opacity: 0.8;
-}
-
-/* Add a white background color to the sign up button */
-.form-container .signup {
-    background-color: white;
-    color: black;
-}
-
-/* Add some hover effects to buttons */
-.form-container .btn:hover, .open-button:hover {
-    opacity: 1;
-}
-
-/* Controls the LogIn sign */
-h1{
-  font-size: 30px;
-  font-family: Arbotek;
-  margin-left: 143px;
-  margin-bottom: 30px;
-}
-
-/* Controls the Forgot Password? sign */
-h2 {
-  font-size: 12px;
-  margin-left:282px;
-  margin-top: -15px;
-  margin-bottom: 30px;
-  text-decoration: underline;
-}
-
-/* Controls the Sing up sign */
-h3{
-  font-size: 30px;
-  font-family: Arbotek;
-  margin-left: 133px;
-  margin-bottom: 30px;
-}
-
-hr.rounded {
-  border-top: 3px dashed rgb(159, 158, 158);
-  margin-top: -3px;
-  border-radius: 5px;
-}
-
-/* Radio Buttons for Roles*/
-.controls {
-  display: flex;
-  margin-left: 15%;
-  padding: 0;
-  
-}
-
-.radio {
-  flex: 1 0 auto;
-  display: block;
-  flex-direction: column;
-  align-items:center;
-  margin-top: -5%;
-}
-
 </style>
-
-
-<script>
-function openForm() {
-  if(document.getElementById("mySignUpForm").style.display =="block"){
-    document.getElementById("mySignUpForm").style.display = "none"
-  }
-  document.getElementById("myLogInForm").style.display = "block";
-  document.getElementById("coverBackground").className = "coverOn";
-}
-
-function openSignUpForm() {
-  document.getElementById("myLogInForm").style.display = "none";
-  document.getElementById("mySignUpForm").style.display = "block";
-  document.getElementById("coverBackground").className = "coverOn";
-}
-
-function closeForm() {
-  document.getElementById("mySignUpForm").style.display = "none";
-  document.getElementById("myLogInForm").style.display = "block";
-  document.getElementById("coverBackground").className = "coverOn";
-}
-
-function exitForm(){
-  if(document.getElementById("mySignUpForm").style.display =="block"){
-    document.getElementById("mySignUpForm").style.display = "none"
-  }
-  document.getElementById("myLogInForm").style.display = "none";
-  document.getElementById("coverBackground").className = "coverOff";
-}
-
-</script>
