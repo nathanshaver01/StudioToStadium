@@ -14,7 +14,9 @@
     <div class="form-popup" id="myLogInForm">
       <form action="/action_page.php" class="form-container">
         <span class="close" onclick="exitForm()">&times;</span> 
-        <h1>LOGIN</h1>
+        <h1 style="font-size: 30px;
+        margin-left: 143px;
+        margin-bottom: 30px;">LOGIN</h1>
     
         <label for="email" style="font-size: 12px"><b>Username</b></label>
         <input type="text" placeholder="Enter Email" name="email" required>
@@ -22,7 +24,11 @@
         <label for="psw" style="font-size: 12px"><b>Password</b></label>
         <input type="password" placeholder="Enter Password" name="psw" required>
     
-        <h2>Forgot Password?</h2>
+        <h2 style="font-size: 12px;
+        margin-left:282px;
+        margin-top: -15px;
+        margin-bottom: 30px;
+        text-decoration: underline;">Forgot Password?</h2>
     
         <button type="submit" class="btn">LOGIN</button>
         <button type="button" class="btn signup" onclick="openSignUpForm()">SIGN UP</button>
@@ -33,7 +39,9 @@
     <div class="form-popup" id="mySignUpForm">
       <form action="/action_page.php" class="form-container">
         <span class="close" onclick="exitForm()">&times;</span>
-        <h3>SIGN UP</h3>
+        <h3 style="font-size: 30px;
+        margin-left: 133px;
+        margin-bottom: 30px;">SIGN UP</h3>
     
         <label for="name" style="font-size: 12px"><b>Full Name</b></label>
         <input type="text" placeholder="Enter Full Name" name="name" required>
@@ -222,31 +230,6 @@ function exitForm(){
 /* Add some hover effects to buttons */
 .form-container .btn:hover, .open-button:hover {
     opacity: 1;
-}
-
-/* Controls the LogIn sign */
-h1{
-  font-size: 30px;
-  font-family: Arbotek;
-  margin-left: 143px;
-  margin-bottom: 30px;
-}
-
-/* Controls the Forgot Password? sign */
-h2 {
-  font-size: 12px;
-  margin-left:282px;
-  margin-top: -15px;
-  margin-bottom: 30px;
-  text-decoration: underline;
-}
-
-/* Controls the Sing up sign */
-h3{
-  font-size: 30px;
-  font-family: Arbotek;
-  margin-left: 133px;
-  margin-bottom: 30px;
 }
 
 hr.rounded {

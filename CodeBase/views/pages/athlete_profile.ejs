@@ -1,0 +1,44 @@
+<html>
+<link href='https://fonts.googleapis.com/css?family=Outfit' rel='stylesheet'>
+<head>
+    <title>StudioToStadium - Profile</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+  <%- include('../partials/navbar'); %>
+
+  <div class="hero-image-1"> </div>
+  <div class="container" style ="width:60%">
+  <h1 style="text-align: center">About StudioToStadium</h1>
+  <hr class="divider1">
+  
+</div>
+<%- include('../partials/footerTest'); %>
+</body>
+</html>
+<style>
+.hero-image-1 {
+  /* Use "linear-gradient" to add a darken background effect to the image (photographer.jpg). This will make the text easier to read */
+  background-image: url("https://i.imgur.com/ZN9uys2.jpg");
+
+  /* Set a specific height */
+  height: 70%;
+
+  /* Position and center the image to scale nicely on all screens */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+hr.divider1 {
+  width: 100%;
+  border: 2px solid black;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 1px 1px 2px;
+}
+</style>
