@@ -20,8 +20,8 @@ app.get('/collegiate_teams', function (req,res) {
 app.get('/settings', function (req,res) {
     res.render('pages/settings');
 });
-app.get('/testPull', function (req,res) {
-    res.render('pages/testPull');
+app.get('/coachFeed', function (req,res) {
+    res.render('pages/coachFeed');
 });
 
 app.listen(3000);
