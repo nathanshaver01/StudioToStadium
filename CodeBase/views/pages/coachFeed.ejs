@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en"> 
+ <%- include('../partials/navbar'); %>
+<link href='https://fonts.googleapis.com/css?family=Outfit' rel='stylesheet'> 
+<link href='https://fonts.googleapis.com/css?family=Pontano Sans' rel='stylesheet'>
+<link href='https://fonts.googleapis.com/css?family=Plus Jakarta Sans' rel='stylesheet'>
+    <body>
+ 
+        <h1>PROSPECTIVE COLLEGIATE DANCERS</h1>
+        <hr>
+        <div class="flex-container space-between">
+            <div class="entire-card">
+                <div class="col card">
+                    <div class="img-placeholder">
+                    <img src="https://images.unsplash.com/photo-1530797195762-6e542a0f1843?crop=entropy&cs=tinysrgb&fm=jpg&ixid=MnwzMjM4NDZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2NTc5MTY2MjE&ixlib=rb-1.2.1&q=80">
+                    </div>
+                    <div>
+                    <h3>RENEE JOHNSON</h3>
+                    <p><i class="fa-solid fa-user"></i> Age: 18</p>
+                    <p><i class="fa-solid fa-location-dot"></i> Location: Orange County, CA</p>
+                    <p><i class="fa-solid fa-location-dot"></i> Education: Univeristy of Florida</p>
+                    <p><i class="fa-solid fa-location-dot"></i> Dance Styles: Tap, Poms, Ballet</p>
+                    </div> 
+                </div>
+                <div id="hideDancer"><p><a href="">Hide this dancer</a></p></div>
+            </div>
+        
+            <div class="col card">
+            <div class="img-placeholder">
+                <img src="https://images.unsplash.com/photo-1614130946015-d5a7a3276fea?crop=entropy&cs=tinysrgb&fm=jpg&ixid=MnwzMjM4NDZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2NTc5MTY4MTU&ixlib=rb-1.2.1&q=80">
+            </div>
+            <div>
+                <h3>Wafaa</h3>
+                <p><i class="fa-solid fa-user"></i> Front End Web Developer</p>
+                <p><i class="fa-solid fa-paper-plane"></i> <a href="mailto:wafaa_cr@outlook.com">Email Me</a></p>
+                <p><i class="fa-solid fa-location-dot"></i> Auckland, New Zealand</p>
+            </div>
+            </div>
+        </div>
+        <!-- Gradient Generator: https://coolors.co/gradients
+        Tints and Shade Generator: https://maketintsandshades.com/-->
+
+
+    </body>
+  
+    <footer>
+        <%- include('../partials/footerTest'); %>
+    </footer>
+
+    
+
+</html>
+
+<style>
+hr {
+    border-top: 2.5px solid rgb(0, 0, 0);
+    width: 96%;
+    }
+#hideDancer{
+    padding-top: 10px;
+}
+h1 {
+        
+    font-family:'Outfit';
+    padding-left: 40px;
+    padding-top: 30px;
+}
+h3 {
+    font-family:'Plus Jakarta Sans';
+}
+
+body {
+    color: #1a1a1a;
+  
+   
+  }
+  .flex-container {
+    display: flex;
+    column-gap: 15px;
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    margin-top: 60px;
+  }
+  .space-between {
+    justify-content: space-between;
+  }
+  .col {
+    width: 33%;
+  }
+  .card {
+   
+    display: flex;
+    column-gap: 20px;
+    position: relative;
+    width: 400px;
+   
+    
+  }
+  .entire-card{
+    border: 1px solid #eee;
+    padding: 20px;
+    padding-bottom: 5px;
+    background-color: #fff;
+    margin-bottom: 10px;
+    display: inline-block;
+
+  }
+  .card img {
+    max-width: 150px;
+    height: auto;
+    
+  }
+ 
+
+  .card:hover img{
+    opacity: 0.3;
+  }
+  .img-placeholder {
+    position: relative;
+    height: 150px;
+    overflow: clip;
+    width: 150px;
+    
+  }
+  h3 {
+    font-weight: 400;
+  }
+  p {
+    font-weight: 300;
+    font-family: 'Pontano Sans';
+    line-height: 65%;
+    letter-spacing: 10%;
+  }
+  a {
+    color: #000000;
+    text-decoration: none;
+  }
+  a:hover {
+    color: black;
+  }
+  
+
+</style>
