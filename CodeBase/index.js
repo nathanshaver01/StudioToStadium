@@ -17,49 +17,25 @@ const dbConfig = {
 
 var db =  pgp(dbConfig);
 
-
-
-
-
-
 //const port = process.env.PORT || 5000;
 
 app.get('/', function (req,res) {
     res.render('pages/index');
 });
-app.get('/collegiate_teams', function (req,res) {
-    res.render('pages/collegiate_teams');
+app.get('/conferences', function (req,res) {
+    res.render('pages/conferences');
+});
+app.get('/about', function (req,res) {
+    res.render('pages/about');
 });
 app.get('/coachFeed', function (req,res) {
     res.render('pages/coachFeed');
 
 });
-app.get('/settings',function(req,res) {
-    var user_select = 'SELECT * FROM users WHERE user_id=1;'
-    db.task('get-everything',task => {
-        return task.batch([
-            task.any(user_select)
-        ]);
-
-    })
-    .then(info => {
-        console.log("Info:", info[0]);
-        console.log('test');
-        res.render('pages/settings',{
-            users: info[0]
-        })
-    })
-    .catch(function (err) {
-        console.log('error',err);
-        res.render('pages/settings', {
-            users: ''
-        
-        })
-    })
-
-
-
+app.get('/athlete_profile', function (req,res) {
+    res.render('pages/athlete_profile');
 });
+
 app.listen(3000);
 console.log('3000 is the magic port');
 
