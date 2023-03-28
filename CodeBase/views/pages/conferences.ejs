@@ -5,13 +5,29 @@
 </head>
 <body>
   <%- include('../partials/navbar'); %>
-  <!--<div class="hero-image-1"> </div>-->
+  <div class="hero-image-2"> </div>
   <div class="container" style ="width:60%; font-family: arbotek, sans-serif">
-    <h1 style="text-align: center">Conferences We Support</h1>
+    <h1 style="text-align: center">Supported Conferences</h1>
     <hr class="divider1">
     <p>Recruiting can be a full time job, but how much time do you have left to give?! 
       Let us aid you by discovering and tracking prospective athletes that fit your standards! Our comprehensive recruiting solution will help your program gain traction through increased exposure as well as diversifying your prospective pool.
     </p>
+    <h2 style="text-align: center">Division I</h2>
+    <!--<div class="row">
+      <div class="column">
+        <img src = "https://theamerican.org/common/controls/image_handler.aspx?thumb_id=0&image_path=/images/2017/7/5/AAC_Pri_Color.jpg" style="width:50px; height:50px">
+        <h2>American Athletic</h2>
+      </div>
+      <div class="column">
+        <img src = "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/Atlantic_Coast_Conference_logo.svg/2560px-Atlantic_Coast_Conference_logo.svg.png" style="width:70px; height:50px">
+        <h2>Atlantic Coast</h2>
+      </div>
+      <div class="column">
+        <img src = "https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/Big_12_Conference_%28cropped%29_logo.svg/1200px-Big_12_Conference_%28cropped%29_logo.svg.png" style="width:60px; height:50px">
+        <h2>Big 12</h2>
+      </div>
+    </div>
+    !-->
     <div class="container">
       <div class="row d-flex justify-content-center mx-auto">
         <div class="col-md-5">
@@ -92,4 +108,37 @@ hr.divider1 {
   margin-right: auto;
   box-shadow: 1px 1px 2px;
 }
+.hero-image-2 {
+  /* Use "linear-gradient" to add a darken background effect to the image (photographer.jpg). This will make the text easier to read */
+  background-image: url("https://i.imgur.com/fwQQJsl.jpg");
+
+  /* Set a specific height */
+  height: 70%;
+
+  /* Position and center the image to scale nicely on all screens */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+.column {
+  float: left;
+  width: 33.33%;
+  padding: 10px;
+  height: 100px;
+}
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.image-container img {
+    width:10%;
+}
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+  }
+}
+
 </style>
