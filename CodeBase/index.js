@@ -38,6 +38,12 @@ app.get('/athlete_profile', function (req,res) {
 app.get('/coach_profile', function (req,res) {
     res.render('pages/coach_profile');
 });
+app.get('/privacy_policy', function (req,res) {
+    res.render('pages/privacy_policy');
+});
+app.get('/terms_and_conditions', function (req,res) {
+    res.render('pages/terms_and_conditions');
+});
 
 app.listen(3000);
 console.log('3000 is the magic port');
