@@ -30,7 +30,7 @@ app.get('/conferences', function (req,res) {
 });
 
 app.get('/about', function (req,res) {
-    var user_select = 'SELECT * FROM users WHERE user_id=1;'
+    var user_select = 'SELECT * FROM users;'
     db.task('get-everything',task => {
         return task.batch([
             task.any(user_select)
