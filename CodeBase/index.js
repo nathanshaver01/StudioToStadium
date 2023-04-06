@@ -1,14 +1,12 @@
 var express = require('express');
 var app = express();
-var bodyParser = require('body-parser');var bodyParser = require('body-parser');
+var bodyParser = require('body-parser');
 app.set('view engine', 'ejs');
 const ejs = require('ejs');
 app.use(bodyParser.json()); 
 app.use(bodyParser.urlencoded({ extended: true })); 
 var pgp = require('pg-promise')();
-app.use(bodyParser.json()); 
-app.use(bodyParser.urlencoded({ extended: true })); 
-var pgp = require('pg-promise')();
+
 
 
 const dbConfig = {
@@ -20,7 +18,7 @@ const dbConfig = {
 };
 
 var db =  pgp(dbConfig);
-var db =  pgp(dbConfig);
+
 
 //const port = process.env.PORT || 5000;
 
