@@ -1,33 +1,44 @@
-
-<style>
-  footer {
-      position: fixed;
-      height: 100px;
-      bottom: 0;
-      width: 100%;
-  }
-  .footer-logo {
-      padding: 2.5%;
-      float: left;
-  }
-  .vl {
-  
-  border-left: 1px solid rgb(0, 0, 0);
-    height: 60px;
-    }
-</style>
-
-<!-- Remove the container if you want to extend the Footer to full width. -->
-<head>
-  <footer style="background-color: #848484;">
-    <div class="footer">
-      <div><img src="https://i.imgur.com/p0nkKal.png" alt="" height="70px" width="70px"></div>
-      
+<!-- FOOTER -->
+<footer id="sticky-footer" class="flex-shrink-0 border">
+    <div class="container" style="bottom:0; width: 100%">
+        <div class="row d-flex justify-content-center mx-auto">
+            <div class="col-md-3 mx-auto"></div>
+            <div class="col-md-4 mx-auto">
+                <h4 sytle = "text-align: left">Studio to Stadium</h4>
+            </div>
+            <div class="col-md-5 mx-auto">
+                <h4>Quick links</h4>
+            </div>             
+        </div>
+        <div class="row" style="font-size: smaller">
+            <div class="col-md-2">
+                <img src="https://i.imgur.com/61x5YQ1.png" alt="" height="70px" width="70px">
+            </div>
+            <div class="col-md-5">
+                    <p>&copy; Copyrights. All rights reserved. <a class="text-primary" href="#">StudioToStadium.com</a></p>
+                    <p><a class="text-primary" href="/terms_and_conditions">Terms & Conditions</a></p>
+                    <p><a class="text-primary" href="/privacy_policy">Privacy Policy</a></p>
+            </div>
+            <div class="col-md-5">
+                <ul class="list-unstyled">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Get started</a></li>
+                    <li><a href="#">FAQ</a></li>
+                </ul>
+            </div>
+        </div>
     </div>
-    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
-        © 2023 Copyright:
-        <a class="text-dark" href="https://mdbootstrap.com/">studiotostadium.com</a></div>
-    
-    <!-- Copyright -->
-  </footer>
-<!-- End of .container -->
+</footer>
+<style>
+    footer {
+        /*position: fixed;*/
+        height: 120px;
+        bottom: 0.5%;
+        width: 100%;
+        background-color: #d9d9d9; 
+        font-family: arbotek, sans-serif; 
+        color: #333;
+        margin-top: auto;
+    }    
+</style>

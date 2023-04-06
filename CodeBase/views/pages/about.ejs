@@ -1,0 +1,166 @@
+<html lang="en"> 
+<html>
+<head> 
+  <title>About - StudioToStadium</title>
+  <link href='https://fonts.googleapis.com/css?family=Outfit' rel='stylesheet'>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <%- include('../partials/navbar'); %>
+</head>
+<body>
+<div class="hero-image-1"> </div>
+<div class="container" style ="width:60%">
+  <h1 style="text-align: center">About StudioToStadium</h1>
+  <hr class="divider1">
+  <p>
+    Studio to Stadium exists to seamlessly unite dancers and coaches across the nation. We strive
+    to facilitate the recruiting process through authentic connections, empowering the individual and
+    providing equal opportunity to all prospective dancers.
+  </p>
+
+</p>
+
+
+<p><%- users[0].email %></p>
+<br>
+<p>
+
+
+    <!--
+    <p>[open_carrot]%- users[0].email %></p>
+    -->
+  <br>
+  <p>
+    Abbey Nugent, the founder of Studio to Stadium is currently a D1A collegiate dance team coach
+    and experienced first hand the inadequate opportunities that coincide with recruitment. She saw
+    an increasingly desperate need for a centralized platform that provided connection within the
+    dance team community. A digitalized network that provided coaches with the tools to feel
+    supported and alongside a space for dancers to showcase their talents and achievements
+    outside traditional social media and emailing platforms.
+  </p>
+  <br>
+  <p>
+    Abbey has a Bachelor's degree in Advertising, Sociology Certificate, and a Master of The Arts in
+    Elementary education. Prior to Studio to Stadium, she had zero experience in entrepreneurship
+    or technology but knew she had a passion for working with young adults and sought to diversify
+    her involvement on campus outside of athletics.
+  </p>
+  <br>
+  <p>
+    Abbey connected with the Computer Science and Engineering program and teamed up with six
+    students that selected S2S as their senior capstone project. These students spent the next
+    school year developing the technology and bringing Abbey's vision to life. Through weekly
+    meetings, guidance from the class professor and their growing knowledge of the tech industry,
+    Studio to Stadium became a reality.
+  </p>
+  <br>
+  <p>
+    We are proud to continuously stay in alignment with our values and proudly claim that our
+    website was coded entirely by undergraduate students! We are committed to providing career
+    development and to continue utilizing the talents of aspiring young professionals on campus!
+  </p>
+  <br>
+</div>
+<div class="container" style ="width:60%">
+  <h1 style="text-align: center">FAQ</h1>
+  <hr class="divider1">
+  <p>
+    <b>How much does it cost to have an account?</b><br>
+    It costs $9.99 a month to be a member. Payment timing is dependent on when you join!
+  </p>
+  <br>
+  <p>
+    <b>What payment methods do you take?</b><br>
+    We accept all major credit cards including Visa, Mastercard, Discover and American Express.
+    Credit cards will automatically be charged at the end of your monthly billing cycle.
+  </p>
+  <br>
+  <p>
+    <b>What information will coaches be able to see?</b><br>
+    Coaches will have access to your profiles where you can upload multiple highlight videos
+    showcasing your progress throughout the season. They will also have access to any information
+    you provide such as personal contact information, accomplishments, awards, social media
+    accounts linked and references.
+  </p>
+  <br>
+  <p>
+    <b>How will I know a coach is interested in me?</b><br>
+    You will receive a notification that a coach has favorited your profile.
+  </p>
+  <br>
+  <p>
+    <b>How can I let a coach know I am interested in learning more about their program?</b><br>
+    Our notification system will instantly let a coach know once you have favorited their team page,
+    while providing them with a direct link to dancers profile. Dancers can follow their favorite team
+    profiles and receive updates on their home page feed in regards to future opportunities, via
+    teams bulletin board. Additionally, all team profiles are linked to their social media pages and
+    websites for easy navigation.
+  </p>
+  <br>
+  <p>
+    <b>Can I pay weekly?</b><br>
+    As dance team recruitment moves quickly, we want to give customers flexibility in their financial
+    commitments. However, weekly payments are available for customers with an additional 10%
+    per week.
+  </p>
+  <br>
+  <p>
+    <b>Are coaches verified before they can create an account?</b><br>
+    Yes. All collegiate coaches are involved in our authentication process that verifies that someone
+    is who they say they are. Once approved, they can start to create their team/program profile..
+  </p>
+  <br>
+  <p>
+    <b>If I use Studio to Stadium am I guaranteed to make a collegiate team?</b><br>
+    As we exist to help facilitate recruitment by connecting dancers and coaches, we can not
+    guarantee positions on any team, program, or University. We are a tool to help increase
+    likelihood of taking dancers to the next level, not
+  </p>
+  <br>
+  <p>
+    <b>If I sign on to a team and no longer need services, how do I cancel a subscription?</b><br>
+    Go to your account settings, select 'cancel membership' and confirm cancellation. Your credit
+    card will be billed for the remainder of that month.
+  </p>
+  <br>
+  <p>
+    <b>Will my profile be deleted if I cancel my membership?</b><br>
+    Yes, your profile will no longer be visible to any school, coach or program once deleted.
+  </p>
+  <br>
+  <p>
+    <b>I was injured and will be out for an extended amount of time. Am I able to freeze my
+      account?</b><br>
+      As injury can feel defeating to athletes, we highly recommend keeping your membership during
+      your recovery period to stay in consistent communication with programs of interest. As we do
+      not allow customers to freeze profiles, you can cancel your membership at any time.
+  </p>
+  <br>
+</div>
+<%- include('../partials/footer'); %>
+</body>
+
+</html>
+<style>
+  .hero-image-1 {
+  /* Use "linear-gradient" to add a darken background effect to the image (photographer.jpg). This will make the text easier to read */
+  background-image: url("https://i.imgur.com/ZN9uys2.jpg");
+
+  /* Set a specific height */
+  height: 70%;
+
+  /* Position and center the image to scale nicely on all screens */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+hr.divider1 {
+  width: 100%;
+  border: 2px solid black;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 1px 1px 2px;
+}
+</style>

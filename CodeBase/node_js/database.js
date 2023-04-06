@@ -32,3 +32,17 @@ client.query('Select * from users', (err, res)=>{
 //need to encrypt passwords somehow?
 //INSERT INTO users VALUES (2, "a@gmail.com", "joe", "mama", 0987654321, false, "swordfish", 4/23/2024, false)
 client.end;
+
+app.post('/', async (req, res) => {
+	const userId = req.body.user_id;
+	try {
+	  await client.connect();
+	  const result = await accessUser(userId);
+	  res.send(result);
+	} catch (err) {
+	  console.error(err.message);
+	  res.status(500).send('Internal Server Error');
+	} finally {
+	  await client.end();
+	}
+  });
