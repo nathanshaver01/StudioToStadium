@@ -19,20 +19,20 @@
         <br>
         <button type="button" class="button-57" onclick="openSignUpForm()">SIGN UP</button>
     </div>
-
-    <div class="three-photo-graphic-container">
-      <hr class="divider1">
-      <div class ="words" style = "display: flex; margin:auto;"> 
-        <img src="https://i.imgur.com/hr9k0Pj.png" alt="" style="height:20px; margin:auto">
-        <img src="https://i.imgur.com/axamLXH.png" alt="" style="height:20px; margin:auto">
-        <img src="https://i.imgur.com/d97r8JM.png" alt="" style="height:20px; margin:auto">
+    <hr class="divider2">
+    <div class="row">
+      <div class="column">
+        <h6 style="font-family: 'Outfit';">BE DISCOVERED</h6>
+        <img src="https://i.imgur.com/hwlpWjH.jpg" alt="Dancing" style="width:100%">
       </div>
-      <div class ="images" style = "display: flex; height: 30%; margin:auto;"> 
-        <img src="https://i.imgur.com/hwlpWjH.jpg" alt="" style="height:200px; margin:auto">
-        <img src="https://i.imgur.com/cJ9jIMX.jpg" alt="" style="height:200px; margin:auto">
-        <img src="https://i.imgur.com/Mjpahha.jpg" alt="" style="height:200px; margin:auto">
+      <div class="column">
+        <h6 style="font-family: 'Outfit';">STAY CONNECTED</h6>
+        <img src="https://i.imgur.com/cJ9jIMX.jpg" alt="Group Session" style="width:100%">
       </div>
-      <hr class="divider2">
+      <div class="column">
+        <h6 style="font-family: 'Outfit';">FIND YOUR TRIBE</h6>
+        <img src="https://i.imgur.com/Mjpahha.jpg" alt="Group Huddle" style="width:100%">
+      </div>
     </div>
 
     
@@ -41,6 +41,10 @@
 </html>
 
 <style>
+h6 {
+  text-align: center;
+  font-size: 1.7em;
+}
 /* CSS */
 .images {
   margin-left: auto;
@@ -177,4 +181,20 @@ body {font-family: arbotek, sans-serif;
   margin: 0;
   padding: 0;}
 * {box-sizing: border-box;}
+* {
+  box-sizing: border-box;
+}
+
+.column {
+  float: left;
+  width: 33.33%;
+  padding: 5px;
+}
+
+/* Clearfix (clear floats) */
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
 </style>
