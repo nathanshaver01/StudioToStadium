@@ -2,12 +2,39 @@ var express = require('express');
 var app = express();
 var bodyParser = require('body-parser');
 app.set('view engine', 'ejs');
-const ejs = require('ejs');
 app.use(bodyParser.json()); 
 app.use(bodyParser.urlencoded({ extended: true })); 
 var pgp = require('pg-promise')();
+var passport = require('passport');
+const LocalStrategy = require('passport-local').Strategy;
 
+const session = require('express-session');
 
+// Use session middleware
+app.use(session({
+    secret: 'howdy',
+    resave: false,
+    saveUninitialized: false
+}));
+
+app.use(passport.initialize());
+app.use(passport.session());
+
+// Serialize the user by storing only the user's ID in the session
+passport.serializeUser(function(user, done) {
+    done(null, user.user_id);
+});
+
+// Deserialize the user by fetching the user's details from the database using the stored ID
+passport.deserializeUser(function(user_id, done) {
+    db.one('SELECT * FROM users WHERE user_id=$1', [user_id])
+        .then(function(user) {
+            done(null, user);
+        })
+        .catch(function(err) {
+            done(err);
+        });
+});
 
 const dbConfig = {
 	host: 'mahmud.db.elephantsql.com',
@@ -19,8 +46,58 @@ const dbConfig = {
 
 var db =  pgp(dbConfig);
 
+var users = [];
 
-//const port = process.env.PORT || 5000;
+db.any('SELECT * FROM users')
+    .then(function(data) {
+        console.log('Users:', data);
+        users = data;
+    })
+    .catch(function(error) {
+        console.log('Error:', error);
+    });
+
+
+passport.use(new LocalStrategy(
+    function(username, password, done) {
+        // Query the database for the user
+        db.one('SELECT * FROM users WHERE first_name=$1', [username])
+        .then(function(user) {
+            // If the user is found, check the password
+            if (password === user.password) {
+                return done(null, user);
+            } else {
+                return done(null, false, { message: 'Incorrect password.' });
+            }
+        })
+        .catch(function(err) {
+            // If there's an error, return it
+            return done(err);
+        });
+    }
+));
+    
+
+app.post('/submit-form', (req, res, next) => {
+    passport.authenticate('local', {
+        successRedirect: '/about',
+        failureRedirect: '/',
+        failureFlash: true
+    }, (err, user, info) => {
+        if (err) {
+            return next(err);
+        }
+        if (!user) {
+            return res.redirect('/');
+        }
+        req.logIn(user, (err) => {
+            if (err) {
+                return next(err);
+            }
+            return res.redirect('/about');
+        });
+    })(req, res, next);
+});
 
 app.get('/', function (req,res) {
     res.render('pages/index');
@@ -29,29 +106,40 @@ app.get('/conferences', function (req,res) {
     res.render('pages/conferences');
 });
 
-app.get('/about', function (req,res) {
+app.get('/about', isLoggedIn, function (req, res) {
     var user_select = 'SELECT * FROM users;'
-    db.task('get-everything',task => {
+    db.task('get-everything', task => {
         return task.batch([
             task.any(user_select)
         ]);
-
     })
     .then(info => {
         console.log("Info:", info[0]);
         console.log('test');
-        res.render('pages/about',{
-            users: info[0]
-        })
+        if (req.isAuthenticated()) {
+            res.render('pages/about', {
+                users: info[0]
+            })
+        } else {
+            res.render('pages/about', {
+                users: null
+            })
+        }
     })
     .catch(function (err) {
         console.log('error',err);
         res.render('pages/about', {
-            users: ''
-
+            users: null
         })
     })
 });
+
+function isLoggedIn(req, res, next) {
+    if (req.isAuthenticated()) {
+        return next();
+    }
+    res.redirect('/');
+}
 app.get('/coachFeed', function (req,res) {
     res.render('pages/coachFeed');
 
@@ -70,65 +158,4 @@ app.get('/terms_and_conditions', function (req,res) {
 });
 
 app.listen(3000);
-console.log('3000 is the magic port');
-
-/*app.listen(port, () => {
-    console.log(`Now listening on port ${port}`);
-}); */
-
-/* TODO:
-
-Login/Register: Login functionality, Stripe
-Settings: Create page, allow user to:
-                1. Delete Account
-                2. If coach: unhide dancers, unfavorite dancers
-                3.Change email
-                4. Change payment info (3rd party link)
-Explore Feed: Create dancer 'cards' dynamically. Fill each with user info and generate them uniform on same page. 
-                1.   Allow for multi-page functionality (Max out how many cards can be on a page)
-                2.   Hide This Dancer Feature
-                3.   Favorite (and unfavorite) Functionality
-                4.   Implement Filtering
-                5.   Implement Sorting
-                6.   Implement Searching
-    Dancer Profile: Create Profile Page Template, 
-                1. Dynamically Generate w/ info based on dancer coach clicks on (from feed) OR dancer that is logged in
-                2. Allow dancer to edit entire page and save
-                3. Allow dancer to view in 'preview mode' (same as coach mode)
-Coach Profile: Need to ask Abbey if this is an expectation.
-            ???
-
-Other:
-    Logout Button
-    Show proper navbars based on role.
-
-
-*/
-/* TODO:
-
-Login/Register: Login functionality, Stripe
-Settings: Create page, allow user to:
-                1. Delete Account
-                2. If coach: unhide dancers, unfavorite dancers
-                3.Change email
-                4. Change payment info (3rd party link)
-Explore Feed: Create dancer 'cards' dynamically. Fill each with user info and generate them uniform on same page. 
-                1.   Allow for multi-page functionality (Max out how many cards can be on a page)
-                2.   Hide This Dancer Feature
-                3.   Favorite (and unfavorite) Functionality
-                4.   Implement Filtering
-                5.   Implement Sorting
-                6.   Implement Searching
-    Dancer Profile: Create Profile Page Template, 
-                1. Dynamically Generate w/ info based on dancer coach clicks on (from feed) OR dancer that is logged in
-                2. Allow dancer to edit entire page and save
-                3. Allow dancer to view in 'preview mode' (same as coach mode)
-Coach Profile: Need to ask Abbey if this is an expectation.
-            ???
-
-Other:
-    Logout Button
-    Show proper navbars based on role.
-
-
-*/
+console.log('3000 is the magic port'); 
