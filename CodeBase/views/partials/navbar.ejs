@@ -6,7 +6,7 @@
       <li class="navBtns" id="navCoachFeed"><a href="/coachFeed">EXPLORE</a></li>
       <li class="navBtns" id="navAbout"><a href="/about">ABOUT</a></li>
       <li class="navBtns"><a class="open-button" onclick="document.getElementById('login').style.display='block'" style="width:auto;" href="#">LOGIN</a></li>
-      <li class="navBtns"><a class="open-button" onclick="document.getElementById('singup').style.display='block'" style="width:auto;" href="#">SIGNUP</a></li>
+      <li class="navBtns"><a class="open-button" onclick="document.getElementById('signup').style.display='block'" style="width:auto;" href="#">SIGNUP</a></li>
   </ul>
   
 </header> 
@@ -16,14 +16,21 @@
     <div class="imgcontainer">
       <span onclick="document.getElementById('login').style.display='none'" class="close" title="Close Modal">&times;</span>
     </div>
-
     <div class="container">
-      <label for="username"><b>Username</b></label>
-      <input type="text" placeholder="Enter Username" name="username" required>
-
-      <label for="password"><b>Password</b></label>
-      <input type="password" placeholder="Enter Password" name="password" required>
-        
+      <div class="row my-3">
+        <div class="col-md-12">
+          <label for="username"><b>Username</b></label>
+          <input type="text" placeholder="Enter Username" name="username" required>
+        </div>
+      </div>
+      <div class="row my-3">
+        <div class="col-md-12">
+          <div class="form-outline">
+            <label for="password"><b>Password</b></label>
+            <input type="password" placeholder="Enter Password" name="password" required>  
+          </div>
+        </div>
+      </div>      
       <button type="submit">Login</button>
       <label>
         <input type="checkbox" checked="checked" name="remember"> Remember me
@@ -31,7 +38,7 @@
     </div>
   </form>
 </div>
-<div id="singup" class="modal">
+<div id="signup" class="modal">
 
   <form class="modal-content animate" action="/action_page.php" method="post">
     <div class="imgcontainer">
@@ -194,7 +201,7 @@ span.psw {
 }
 </style>
 <script>
-  var modal = document.getElementById('singup');
+  var modal = document.getElementById('signup');
   
   window.onclick = function(event) {
       if (event.target == modal) {
