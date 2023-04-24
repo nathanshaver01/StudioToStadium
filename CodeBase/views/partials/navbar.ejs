@@ -1,275 +1,204 @@
-<nav class="navbar navbar-default">
-    <div class="container-fluid" id="navBar" style=font-family:arbotek,sans-serif;>
-      <div class="navbar-header">
-      </div>
-      <a href = "/"><img src="https://i.imgur.com/61x5YQ1.png" style="width:4%; height:8%" id="home-button"></a>
-      <ul class="nav navbar-nav navbar-right">
-        <li class="navBtns" id="navHome"><a href="/">HOME</a></li>
-        <li class="navBtns" id="navCollegiateTeams"><a href="/conferences">CONFERENCES</a></li>
-        <li class="navBtns" id="navCoachFeed"><a href="/coachFeed">EXPLORE</a></li>
-        <li class="navBtns" id="navAbout"><a href="/about">ABOUT</a></li>
-        <li class="navBtns"><a class="open-button" onclick="openForm()" href="#">LOGIN</a></li>
-        
-      </ul>
-    </div>
-    <!--login modal-->
-    <div class="form-popup" id="myLogInForm">
-      <form action="/action_page.php" class="form-container">
-        <span class="close" onclick="exitForm()">&times;</span> 
-        <h1 style="font-size: 30px;
-        margin-left: 143px;
-        margin-bottom: 30px;">LOGIN</h1>
-    
-        <label for="email" style="font-size: 12px"><b>Username</b></label>
-        <input type="text" placeholder="Enter Email" name="email" required>
-    
-        <label for="psw" style="font-size: 12px"><b>Password</b></label>
-        <input type="password" placeholder="Enter Password" name="psw" required>
-    
-        <h2 style="font-size: 12px;
-        margin-left:282px;
-        margin-top: -15px;
-        margin-bottom: 30px;
-        text-decoration: underline;">Forgot Password?</h2>
-    
-        <button type="submit" class="btn">LOGIN</button>
-        <button type="button" class="btn signup" onclick="openSignUpForm()">SIGN UP</button>
-        <button type="button" class="btn" onclick="location.href='/athlete_profile'">Athlete Profile</button>
-        <button type="button" class="btn" onclick="location.href='/coach_profile'">Coach Profile</button>
-      </form>
-    </div>
-    <!--signup modal-->
-    <div class="form-popup" id="mySignUpForm">
-      <form action="/action_page.php" class="form-container">
-        <span class="close" onclick="exitForm()">&times;</span>
-        <h3 style="font-size: 30px;
-        margin-left: 133px;
-        margin-bottom: 30px;">SIGN UP</h3>
-    
-        <label for="name" style="font-size: 12px"><b>Full Name</b></label>
-        <input type="text" placeholder="Enter Full Name" name="name" required>
-    
-        <label for="Username" style="font-size: 12px"><b>Username</b></label>
-        <input type="text" placeholder="Enter Username" name="Username" required>
-    
-        <label for="email" style="font-size: 12px"><b>Email</b></label>
-        <input type="text" placeholder="Enter Email" name="email" required>
-    
-        <label for="email" style="font-size: 12px"><b>Confirm Email</b></label>
-        <input type="text" placeholder="Enter Email" name="confemail" required>
-    
-        <label for="psw" style="font-size: 12px"><b>Password</b></label>
-        <input type="password" minlength="8" placeholder="Enter Password" name="psw" required>
-    
-        <label for="psw" style="font-size: 12px"><b>Confirm Password</b></label>
-        <input type="password" minlength="8" placeholder="Enter Password" name="confpsw" required>
-
-      <div class="controls">
-        <label class="radio" style="margin-top: -1.5%">
-          <input type="radio" name="profileType" value="3" >Coach <!--name needs to be the same for radio buttons to be linked-->
-        </label>
-        <label class="radio">
-          <input type="radio" name="profileType" value="1">Athlete
-        </label>
-      </div>
-        <hr class="rounded">
-    
-        <label for="name" style="font-size: 12px"><b>Name on Card</b></label>
-        <input type="text" placeholder="Enter Full Name" name="nameoncard" required>
-    
-        <label for="name" style="font-size: 12px"><b>Card Number (Dashes not included)</b></label>
-        <input type="text" placeholder="0000 0000 0000 0000" maxlength="16" pattern="[0-9]{16}" name="cardnumber" required>
-    
-        <label for="exp" style="font-size: 12px; width: 50%"><b>Exp. Date</b>
-        <input type="text" placeholder="MM/YYYY" pattern="^((0[1-9])|(1[0-2]))/((2022)|(20[1-2][0-9]))$" name="experationdate"></label>
-    
-        <label for="cvv" style="font-size: 12px; width: 48.9%"><b>CVV</b>
-        <input maxlength="3" pattern="[0-9][0-9][0-9]" name="cvvnumber" type="text" placeholder="XXX"></label>
-    
-        <button type="submit" class="btn">SIGN UP</button>
-        <button type="button" class="btn signup" onclick="closeForm()">CANCEL</button>
-      </form>
-    </div>
-</nav>
-<title>Studio To Stadium</title>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-
-
-<script>
-// Add active class to the current button (highlight it)
-var pageUrl= window.location.href
-if(pageUrl == "http://localhost:3000/"){
-  document.getElementById("navHome").className += " active"
-}
-else if(pageUrl == "http://localhost:3000/collegiate_teams"){
-  document.getElementById("navCollegiateTeams").className += " active"
-
-}
-else if(pageUrl == "http://localhost:3000/settings"){
-  document.getElementById("navAbout").className += " active"
-
-}
-var header = document.getElementById("navBar");
-var btns = header.getElementsByClassName("navBtns");
-for (var i = 0; i < btns.length; i++) {
-  btns[i].addEventListener("click", function() {
-  var current = document.getElementsByClassName("active");
-  current[0].className = current[0].className.replace(" active", "");
-  this.className += " active";
-  });
-}
-
-//login and signup function controls
-function openForm() {
-  if(document.getElementById("mySignUpForm").style.display =="block"){
-    document.getElementById("mySignUpForm").style.display = "none"
-  }
-  document.getElementById("myLogInForm").style.display = "block";
-  document.getElementById("coverBackground").className = "coverOn";
-}
-
-function openSignUpForm() {
-  document.getElementById("myLogInForm").style.display = "none";
-  document.getElementById("mySignUpForm").style.display = "block";
-  document.getElementById("coverBackground").className = "coverOn";
-}
-
-function closeForm() {
-  document.getElementById("mySignUpForm").style.display = "none";
-  document.getElementById("myLogInForm").style.display = "block";
-  document.getElementById("coverBackground").className = "coverOn";
-}
-
-function exitForm(){
-  if(document.getElementById("mySignUpForm").style.display =="block"){
-    document.getElementById("mySignUpForm").style.display = "none"
-  }
-  document.getElementById("myLogInForm").style.display = "none";
-  document.getElementById("coverBackground").className = "coverOff";
-}
-</script>
-
-<style>
-/* The popup form - hidden by default */
-.form-popup {
-    display: none;
-    max-width: 400px;
-    margin-left: auto;
-    margin-right: auto;
-    left: 0;
-    right: 0;
-    z-index: 9;
-    position: absolute;
-}
-
-.coverOff {
-    position: fixed;
-    left: 0;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0);
-    z-index: -1;
-
-}
-
-.coverOn {
-    position: fixed;
-    left: 0;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.75);
-    z-index: 1;
-
-}
-
-/* Add styles to the form container */
-.form-container {
-    max-width: 400px;
-    padding: 10px;
-    background-color: #f1f1f1cb;
-}
-
-/* Full-width input fields */
-.form-container input[type=text], .form-container input[type=password] {
-    width: 100%;
-    padding: 15px;
-    margin: 0.5px 0 22px 0;
-    border: 1px solid black;
-    background: white;
-}
-
-/* When the inputs get focus, do something */
-.form-container input[type=text]:focus, .form-container input[type=password]:focus {
-    background-color: #ddd;
-    outline: none;
-}
-
-/* Set a style for the submit/login button */
-.form-container .btn {
-    background-color: black;
-    color: white;
-    padding: 16px 20px;
-    border: none;
-    cursor: pointer;
-    width: 50%;
-    margin-left:93px;
-    margin-bottom:10px;
-    opacity: 0.8;
-}
-
-/* Add a white background color to the sign up button */
-.form-container .signup {
-    background-color: white;
-    color: black;
-}
-
-/* Add some hover effects to buttons */
-.form-container .btn:hover, .open-button:hover {
-    opacity: 1;
-}
-
-hr.rounded {
-  border-top: 3px dashed rgb(159, 158, 158);
-  margin-top: -3px;
-  border-radius: 5px;
-}
-
-/* Radio Buttons for Roles*/
-.controls {
-  display: flex;
-  margin-left: 15%;
-  padding: 0;
+<header class="header">
+  <h1 class="logo"><a href="#">StudioToStadium</a></h1>
+  <ul class="main-nav">
+      <li class="navBtns" id="navHome"><a href="/">HOME</a></li>
+      <li class="navBtns" id="navCollegiateTeams"><a href="/conferences">CONFERENCES</a></li>
+      <li class="navBtns" id="navCoachFeed"><a href="/coachFeed">EXPLORE</a></li>
+      <li class="navBtns" id="navAbout"><a href="/about">ABOUT</a></li>
+      <li class="navBtns"><a class="open-button" onclick="document.getElementById('login').style.display='block'" style="width:auto;" href="#">LOGIN</a></li>
+      <li class="navBtns"><a class="open-button" onclick="document.getElementById('singup').style.display='block'" style="width:auto;" href="#">SIGNUP</a></li>
+  </ul>
   
+</header> 
+<div id="login" class="modal">
+
+  <form class="modal-content animate" action="/submit-form" method="post">
+    <div class="imgcontainer">
+      <span onclick="document.getElementById('login').style.display='none'" class="close" title="Close Modal">&times;</span>
+    </div>
+
+    <div class="container">
+      <label for="username"><b>Username</b></label>
+      <input type="text" placeholder="Enter Username" name="username" required>
+
+      <label for="password"><b>Password</b></label>
+      <input type="password" placeholder="Enter Password" name="password" required>
+        
+      <button type="submit">Login</button>
+      <label>
+        <input type="checkbox" checked="checked" name="remember"> Remember me
+      </label>
+    </div>
+  </form>
+</div>
+<div id="singup" class="modal">
+
+  <form class="modal-content animate" action="/action_page.php" method="post">
+    <div class="imgcontainer">
+      <span onclick="document.getElementById('signup').style.display='none'" class="close" title="Close Modal">&times;</span>
+    </div>
+
+    <div class="container">
+      <label for="uname"><b>First Name</b></label>
+      <input type="text" placeholder="First Name" name="first_name" required>
+      
+      <label for="uname"><b>Last Name</b></label>
+      <input type="text" placeholder="Last Name" name="last_name" required>
+
+      <label for="uname"><b>Username</b></label>
+      <input type="text" placeholder="Enter Username" name="uname" required>
+
+      <label for="uname"><b>Phone Number</b></label>
+      <input type="text" placeholder="Enter Phone Number" name="phone_number" required>
+
+      <label for="uname"><b>Email </b></label>
+      <input type="text" placeholder="Enter Email" name="email" required>
+
+      <label for="psw"><b>Password</b></label>
+      <input type="password" placeholder="Enter Password" name="password" required>
+        
+      <button type="submit">Signup</button>
+    </div>
+  </form>
+</div>
+
+<style>   
+* {
+box-sizing: border-box;
+}
+body {
+font-family: 'Montserrat', sans-serif;
+line-height: 1.6;
+margin: 0;
+min-height: 100vh;
+}
+ul {
+margin: 0;
+padding: 0;
+list-style: none;
+}
+h2,h3,a {
+color: #000000;
+}
+.logo {
+margin: 0;
+font-size: 1.5em;
+}
+.main-nav {
+margin-top: 5px;
+
+}
+.logo a, .main-nav a {
+padding: 10px 15px;
+text-transform: uppercase;
+text-align: center;
+display: block;
+}
+.main-nav a {
+color: #000000;
+font-size: 1.05em;
+}
+.main-nav a:hover {
+color: #718daa;
+}
+.header {
+padding-top: .5em;
+padding-bottom: .5em;
+-webkit-border-radius: 5px;
+-moz-border-radius: 5px;
+background-color: #ffffff;
+border-radius: 5px;
+}
+input[type=text], input[type=password] {
+width: 100%;
+padding: 12px 20px;
+margin: 8px 0;
+display: inline-block;
+border: 1px solid #ccc;
+box-sizing: border-box;
 }
 
-.radio {
-  flex: 1 0 auto;
-  display: block;
+.container {
+padding: 16px;
+}
+
+span.psw {
+float: right;
+padding-top: 16px;
+}
+
+.modal {
+display: none;
+position: fixed; 
+z-index: 1; 
+left: 0;
+top: 0;
+width: 100%; 
+height: 100%; 
+overflow: auto;
+background-color: rgb(0,0,0); 
+background-color: rgba(0,0,0,0.4); 
+padding-top: 60px;
+}
+
+.modal-content {
+background-color: #fefefe;
+margin: 5% auto 15% auto; 
+border: 1px solid #888;
+width: 80%; 
+}
+
+.close {
+position: absolute;
+right: 25px;
+top: 0;
+color: #000;
+font-size: 35px;
+font-weight: bold;
+}
+
+.close:hover, .close:focus {
+color: rgb(156, 71, 71);
+cursor: pointer;
+}
+
+@media screen and (max-width: 300px) {
+span.psw {
+   display: block;
+   float: none;
+}
+.cancelbtn {
+   width: 100%;
+}
+}
+
+@media (min-width: 769px) {
+.header, .main-nav {
+  display: flex;
+}
+.header {
+  margin: 0 auto;
   flex-direction: column;
-  align-items:center;
-  margin-top: -5%;
+  max-width: 1550px;
+  align-items: center;
+  width: 100%;
+
 }
-.home-button{
-  width: 4%;
-  height:8%;
+}
+@media (min-width: 1025px) {
+.header {
+  justify-content: space-between;
+  flex-direction: row;
 }
 
-@media only screen and (max-width: 320px) {
-  /* For mobile phones: */
-  .home-button {
-    width: 100%;
-    height:100%;
-  }
-  html{font-size:50%}
 }
-@media (min-width:600px){
-  html{font-size:70%}
-}
-
 </style>
+<script>
+  var modal = document.getElementById('singup');
+  
+  window.onclick = function(event) {
+      if (event.target == modal) {
+          modal.style.display = "none";
+      }
+  }
+</script>
