@@ -102,6 +102,10 @@ app.post('/submit-form', (req, res, next) => {
 app.get('/', function (req,res) {
     res.render('pages/index');
 });
+
+app.get('/about', function (req,res) {
+    res.render('pages/about');
+});
 app.get('/conferences', function (req,res) {
     res.render('pages/conferences');
 });
@@ -153,6 +157,7 @@ app.get('/coach_profile', function (req,res) {
 app.get('/privacy_policy', function (req,res) {
     res.render('pages/privacy_policy');
 });
+
 app.get('/terms_and_conditions', function (req,res) {
     res.render('pages/terms_and_conditions');
 });
