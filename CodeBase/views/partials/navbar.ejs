@@ -38,36 +38,67 @@
     </div>
   </form>
 </div>
+
+<!-- signup / create account -->
 <div id="signup" class="modal">
 
-  <form class="modal-content animate" action="/action_page.php" method="post">
+  <form class="modal-content animate" action="/signup_form" method="post">
     <div class="imgcontainer">
       <span onclick="document.getElementById('signup').style.display='none'" class="close" title="Close Modal">&times;</span>
     </div>
 
     <div class="container">
-      <label for="uname"><b>First Name</b></label>
-      <input type="text" placeholder="First Name" name="first_name" required>
+      <label for="first_name"><b>First Name</b></label>
+      <input type="text" id="first_name" placeholder="First Name"required>
       
-      <label for="uname"><b>Last Name</b></label>
-      <input type="text" placeholder="Last Name" name="last_name" required>
+      <label for="last_name"><b>Last Name</b></label>
+      <input type="text" id="last_name" placeholder="Last Name" required>
 
-      <label for="uname"><b>Username</b></label>
-      <input type="text" placeholder="Enter Username" name="uname" required>
+      <label for="username"><b>Username</b></label>
+      <input type="text" id="username" placeholder="Enter Username" required>
 
-      <label for="uname"><b>Phone Number</b></label>
-      <input type="text" placeholder="Enter Phone Number" name="phone_number" required>
+      <label for="phone_number"><b>Phone Number</b></label>
+      <input type="text" id="phone_number" placeholder="Enter Phone Number"  required>
 
-      <label for="uname"><b>Email </b></label>
-      <input type="text" placeholder="Enter Email" name="email" required>
+      <label for="email"><b>Email </b></label>
+      <input type="text" id="email" placeholder="Enter Email" required>
 
-      <label for="psw"><b>Password</b></label>
-      <input type="password" placeholder="Enter Password" name="password" required>
+      <label for="password"><b>Password</b></label>
+      <input type="password" id="password" placeholder="Enter Password" required>
         
-      <button type="submit">Signup</button>
+      <button onclick="send()">Signup</button>
     </div>
   </form>
 </div>
+<!-- JS for signup POST request. refer to index.js for rest of code -->
+<script>
+  function send() {
+      var fname = document.getElementById("first_name").value;
+      var lname = document.getElementById("last_name").value;
+      var uname = document.getElementById("username").value;
+      var phnumber = document.getElementById("phone_number").value;
+      var email = document.getElementById("email").value;
+      //plaintext password simply for testing purposes. ultimately this will be hashed
+      var password = document.getElementById("password").value;
+
+        const json = {
+            first_name: fname,
+            last_name: lname,
+            username: uname,
+            phone_number: phnumber,
+            email: email,
+            password: password,
+      };
+
+      fetch("/signup_form", {
+          method: "POST",
+          headers: {
+              "Content-Type": "application/json",
+          },
+          body: JSON.stringify(json),
+      });
+  }
+</script>
 
 <style>   
 * {

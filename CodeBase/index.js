@@ -99,6 +99,7 @@ app.post('/submit-form', (req, res, next) => {
     })(req, res, next);
 });
 
+// Render pages
 app.get('/', function (req,res) {
     res.render('pages/index');
 });
@@ -160,6 +161,27 @@ app.get('/privacy_policy', function (req,res) {
 
 app.get('/terms_and_conditions', function (req,res) {
     res.render('pages/terms_and_conditions');
+});
+
+//signup form actions
+app.get('/', function (req, res) {
+    res.sendFile(__dirname + "/views/pages/index.ejs");
+});
+ 
+/* 
+* Notes on Post
+* this currently returns undefind for all values, indicating a parsing error
+* however, if you delete the res.[...], causing the app to hang on the post
+* and then try submitting the data again, it gets parsed and read correctly
+*/
+app.post('/signup_form', function (req, res) {
+    console.log(req.body.first_name);
+    console.log(req.body.last_name);
+    console.log(req.body.username);
+    console.log(req.body.phone_number)
+    console.log(req.body.email);
+    console.log(req.body.password);
+    res.render('pages/athlete_profile')
 });
 
 app.listen(3000);
