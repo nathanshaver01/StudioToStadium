@@ -1,0 +1,36 @@
+git fetch
+- downloads all history from the remote tracking branches
+
+git merge
+- combines remote with local branch
+
+git push
+- uploads local branch to branch on github
+
+git pull
+- updates loacal with all the new commits on that branch
+- cobination of git fetch + git merge
+
+git add [file]
+- adds that file to the commit
+- "Snapshots the file in preparation for versioning"
+
+git add .
+- adds ALL changed files
+
+git commit -m "message here"
+- "Records file snapshots permanently in version history"
+
+git commit -a -m "message"
+- git add . + git commit -m "message"
+
+git status
+- shows what has been changed since last commit
+
+git reset [commit]
+- undoeas all commits after given commit, preserving local changes
+
+git reset --hard [commit]
+- discards all history and changes back to the specific commit
+
+
